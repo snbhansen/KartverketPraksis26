@@ -1,0 +1,938 @@
+/* ==================================================
+   GRUNNSTIL & VARIABLER
+================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --green-dark: #006b3c;
+    --green: #168543;
+    --green-light: #d9f0df;
+    --green-lighter: #edf7f0;
+
+    --text: #202020;
+    --text-secondary: #565c58;
+
+    --border: #d5ded8;
+
+    --white: #ffffff;
+    --off-white: #f8f8f6;
+
+    --dark: #17342a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--text);
+    background: var(--white);
+
+    line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+.content-container {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.site-header {
+    height: 96px;
+
+    display: flex;
+    align-items: center;
+
+    background: var(--white);
+
+    border-bottom: 1px solid #eeeeee;
+
+    position: relative;
+    z-index: 20;
+}
+
+.header-container {
+    width: min(1440px, calc(100% - 64px));
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+}
+
+.kartverket-logo {
+    display: block;
+
+    width: 168px;
+    height: auto;
+}
+
+.brand-divider {
+    width: 1px;
+    height: 27px;
+
+    background: #c9cecb;
+}
+
+.brand-project {
+    color: #666c68;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+.desktop-nav {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.desktop-nav a {
+    position: relative;
+
+    padding: 12px 0;
+
+    color: #505651;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: color 150ms ease;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+    color: var(--green-dark);
+}
+
+.desktop-nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 4px;
+
+    width: 100%;
+    height: 2px;
+
+    background: var(--green);
+}
+
+.menu-button {
+    margin-left: 10px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 8px;
+
+    border: 0;
+
+    color: var(--green-dark);
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-text {
+    font-size: 15px;
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+}
+
+.menu-lines {
+    width: 36px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.menu-lines span {
+    display: block;
+
+    width: 100%;
+    height: 4px;
+
+    background: var(--green-dark);
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 75px 0 88px;
+
+    background: var(--green-light);
+}
+
+.hero-pattern {
+    position: absolute;
+
+    width: 780px;
+    height: 780px;
+
+    right: -210px;
+    top: -355px;
+
+    border: 2px solid rgba(0, 107, 60, 0.07);
+
+    border-radius: 50%;
+}
+
+.hero-pattern::before,
+.hero-pattern::after {
+    content: "";
+
+    position: absolute;
+
+    border: 2px solid rgba(0, 107, 60, 0.07);
+
+    border-radius: 50%;
+}
+
+.hero-pattern::before {
+    width: 575px;
+    height: 575px;
+
+    left: 100px;
+    top: 100px;
+}
+
+.hero-pattern::after {
+    width: 360px;
+    height: 360px;
+
+    left: 208px;
+    top: 208px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumb {
+    margin-bottom: 57px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #44534b;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.breadcrumb a {
+    color: var(--green-dark);
+
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.eyebrow {
+    margin-bottom: 15px;
+
+    color: var(--green-dark);
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin-bottom: 24px;
+
+    color: var(--dark);
+
+    font-size: clamp(38px, 6vw, 68px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+}
+
+.hero-intro {
+    max-width: 620px;
+    margin-bottom: 34px;
+
+    color: #2b3b32;
+
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hero-tags span {
+    padding: 7px 16px;
+
+    border-radius: 999px;
+
+    border: 1px solid rgba(0, 107, 60, 0.22);
+    background: rgba(255, 255, 255, 0.65);
+
+    color: var(--green-dark);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ==================================================
+   SEKSJONER & GENERELLE ELEMENTER
+================================================== */
+
+.section {
+    padding: 95px 0;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.section-soft {
+    background: var(--off-white);
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.section-label {
+    position: sticky;
+    top: 32px;
+}
+
+.section-label span {
+    display: block;
+    margin-bottom: 6px;
+
+    color: var(--green);
+
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.section-label p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.section-content h2 {
+    margin-bottom: 24px;
+
+    color: var(--dark);
+
+    font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.section-content .lead {
+    margin-bottom: 22px;
+
+    color: var(--dark);
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.section-content p {
+    margin-bottom: 18px;
+
+    color: #38423c;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.section-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==================================================
+   TEAM-GRID & PROFILKORT
+================================================== */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 36px;
+}
+
+.member-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+.member-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 107, 60, 0.09);
+    border-color: var(--green);
+}
+
+.member-header {
+    padding: 32px 28px 20px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border-bottom: 1px solid #f0f4f1;
+}
+
+.member-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--green-light), var(--green-lighter));
+    border: 2px solid var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green-dark);
+    font-size: 24px;
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.member-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.member-identity h3 {
+    color: var(--dark);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 4px;
+}
+
+.member-role {
+    display: inline-block;
+    color: var(--green-dark);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.member-body {
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 18px;
+}
+
+.member-study {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.member-study svg {
+    flex-shrink: 0;
+    color: var(--green);
+}
+
+.member-bio {
+    color: #48544d;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.member-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.skill-tag {
+    padding: 4px 10px;
+    background: var(--green-lighter);
+    color: var(--green-dark);
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.member-footer {
+    padding: 16px 28px;
+    background: #fafcfb;
+    border-top: 1px solid #f0f4f1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #5c6861;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: color 150ms ease, background 150ms ease;
+}
+
+.social-link:hover {
+    color: var(--green-dark);
+    background: var(--green-lighter);
+}
+
+.social-link svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+}
+
+
+/* ==================================================
+   METODIKK / ARBEIDSFORM KORT
+================================================== */
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.method-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    transition: transform 150ms ease, border-color 150ms ease;
+}
+
+.method-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--green);
+}
+
+.method-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--green-light);
+    color: var(--green-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.method-card h3 {
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.method-card p {
+    color: #48544d;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* ==================================================
+   VEILEDERE & PARTNERE
+================================================== */
+
+.supervisors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.supervisor-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.supervisor-badge {
+    padding: 4px 10px;
+    background: var(--green-light);
+    color: var(--green-dark);
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.supervisor-info h3 {
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.supervisor-org {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.supervisor-desc {
+    color: #48544d;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+
+/* ==================================================
+   HIGHLIGHT / MÅL-SEKSJON
+================================================== */
+
+.highlight-section {
+    padding: 70px 0;
+    background: var(--dark);
+    color: var(--white);
+}
+
+.highlight-box {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.highlight-number {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--green);
+    background: rgba(22, 133, 67, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green-light);
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.highlight-content .small-heading {
+    color: var(--green-light);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.highlight-content h2 {
+    color: var(--white);
+    font-size: clamp(24px, 3.5vw, 34px);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 14px;
+}
+
+.highlight-content p {
+    color: #c0cfc6;
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 800px;
+}
+
+
+/* ==================================================
+   CHECKLIST / MÅL-ELEMENTER
+================================================== */
+
+.check-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.check-item span {
+    color: var(--green);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.check-item p {
+    color: var(--dark);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+/* ==================================================
+   WHY / AVSLUTNING
+================================================== */
+
+.why-section {
+    padding: 95px 0;
+    background: var(--green-lighter);
+}
+
+.why-section .content-container {
+    max-width: 820px;
+}
+
+.why-section h2 {
+    color: var(--dark);
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+}
+
+.why-section p {
+    color: #2e3c33;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    color: var(--green-dark);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: gap 150ms ease;
+}
+
+.back-link:hover {
+    gap: 16px;
+    text-decoration: underline;
+}
+
+.back-link .arrow {
+    font-size: 18px;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    padding: 50px 0;
+    background: var(--white);
+    border-top: 1px solid #e7ece8;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-right a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 150ms ease;
+}
+
+.footer-right a:hover {
+    color: var(--green-dark);
+}
+
+
+/* ==================================================
+   RESPONSIVT DESIGN
+================================================== */
+
+@media (max-width: 900px) {
+    .two-column {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .section-label {
+        position: static;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-label span {
+        margin-bottom: 0;
+    }
+
+    .highlight-box {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        height: 80px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .section,
+    .why-section {
+        padding: 65px 0;
+    }
+
+    .hero {
+        padding: 50px 0 65px;
+    }
+
+    .team-grid,
+    .supervisors-grid,
+    .method-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
