@@ -475,13 +475,11 @@ footer {
 }
 
 .footer-brand {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
+    font-weight: 700;
 }
 
-.footer-brand p {
+.footer-brand + p {
+    margin-top: 14px;
     color: #b9c6c0;
     font-size: 14px;
 }
