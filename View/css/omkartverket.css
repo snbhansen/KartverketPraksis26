@@ -1,0 +1,629 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --green-dark: #006b3c;
+    --green: #168543;
+    --green-light: #d9f0df;
+    --green-lighter: #edf7f0;
+    --text: #202020;
+    --text-secondary: #565c58;
+    --border: #d5ded8;
+    --white: #ffffff;
+    --off-white: #f8f8f6;
+    --dark: #17342a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+.content-container {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.site-header {
+    height: 96px;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+    z-index: 20;
+}
+
+.header-container {
+    width: min(1440px, calc(100% - 64px));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.kartverket-logo {
+    display: block;
+    width: 168px;
+    height: auto;
+}
+
+.brand-divider {
+    width: 1px;
+    height: 27px;
+    background: #c9cecb;
+}
+
+.brand-project {
+    color: #666c68;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.desktop-nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.desktop-nav a {
+    position: relative;
+    padding: 12px 0;
+    color: #505651;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+    color: var(--green-dark);
+}
+
+.desktop-nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 100%;
+    height: 2px;
+    background: var(--green);
+}
+
+.menu-button {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border: 0;
+    color: var(--green-dark);
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-text {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+
+.menu-lines {
+    width: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-lines span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: var(--green-dark);
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 75px 0 88px;
+    background: var(--green-light);
+}
+
+.hero-pattern {
+    position: absolute;
+    width: 780px;
+    height: 780px;
+    right: -210px;
+    top: -355px;
+    border: 2px solid rgba(0, 107, 60, 0.07);
+    border-radius: 50%;
+}
+
+.hero-pattern::before,
+.hero-pattern::after {
+    content: "";
+    position: absolute;
+    border: 2px solid rgba(0, 107, 60, 0.07);
+    border-radius: 50%;
+}
+
+.hero-pattern::before {
+    width: 575px;
+    height: 575px;
+    left: 100px;
+    top: 100px;
+}
+
+.hero-pattern::after {
+    width: 360px;
+    height: 360px;
+    left: 208px;
+    top: 208px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumb {
+    margin-bottom: 57px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #44534b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.breadcrumb a {
+    color: var(--green-dark);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.eyebrow {
+    margin-bottom: 15px;
+    color: var(--green-dark);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 820px;
+    margin-bottom: 34px;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 650;
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+}
+
+.hero-intro {
+    max-width: 710px;
+    margin-bottom: 38px;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hero-tags span {
+    padding: 8px 16px;
+    border: 1px solid var(--green-dark);
+    border-radius: 100px;
+    color: var(--green-dark);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.section {
+    padding: 110px 0;
+}
+
+.section-soft {
+    background: var(--off-white);
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 780px);
+    gap: 90px;
+}
+
+.section-label {
+    align-self: start;
+    padding-top: 16px;
+    border-top: 2px solid var(--green);
+}
+
+.section-label span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--green-dark);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.section-label p {
+    color: #414b45;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.section-content h2 {
+    max-width: 760px;
+    margin-bottom: 30px;
+    font-size: clamp(35px, 4vw, 52px);
+    font-weight: 650;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+}
+
+.section-content > p {
+    max-width: 760px;
+    margin-bottom: 18px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.section-content .lead {
+    margin-bottom: 30px;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+.highlight-section {
+    padding: 0 0 110px;
+}
+
+.highlight-box {
+    padding: 52px;
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 48px;
+    background: var(--green-lighter);
+    border-top: 5px solid var(--green);
+}
+
+.highlight-number {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--white);
+    background: var(--green-dark);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.small-heading {
+    margin-bottom: 12px;
+    color: var(--green-dark);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.highlight-content h2 {
+    margin-bottom: 18px;
+    font-size: 36px;
+    font-weight: 650;
+    line-height: 1.2;
+}
+
+.highlight-content > p:last-child {
+    max-width: 700px;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.card-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.info-card {
+    min-height: 260px;
+    padding: 30px;
+    border: 1px solid var(--border);
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--green);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.card-number {
+    display: block;
+    margin-bottom: 44px;
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.info-card h3 {
+    margin-bottom: 11px;
+    font-size: 20px;
+    font-weight: 650;
+}
+
+.info-card p {
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.dark-section {
+    color: var(--white);
+    background: var(--dark);
+}
+
+.dark-label {
+    border-color: #84c99a;
+}
+
+.dark-label span,
+.dark-label p {
+    color: #bde6c9;
+}
+
+.dark-section .lead {
+    color: #e0ebe4;
+}
+
+.pill-list {
+    margin-top: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.pill-list span {
+    padding: 11px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 100px;
+    font-size: 15px;
+}
+
+.back-link {
+    width: min(100%, 760px);
+    margin-top: 50px;
+    padding: 22px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--green);
+    border-bottom: 1px solid var(--green);
+    color: var(--green-dark);
+    font-size: 17px;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.back-link .arrow {
+    font-size: 25px;
+    transition: transform 150ms ease;
+}
+
+.back-link:hover .arrow {
+    transform: translateX(6px);
+}
+
+footer {
+    padding: 55px 0;
+    color: var(--white);
+    background: #10241d;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+.footer-brand {
+    font-weight: 700;
+}
+
+.footer-brand + p {
+    margin-top: 14px;
+    color: #b9c6c0;
+    font-size: 14px;
+}
+
+.footer-right {
+    display: flex;
+    gap: 28px;
+}
+
+.footer-right a {
+    color: var(--white);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footer-right a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 950px) {
+    .desktop-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .brand-divider,
+    .brand-project {
+        display: none;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .section-label {
+        max-width: 190px;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-box {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-number {
+        width: 90px;
+        height: 90px;
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 620px) {
+    .content-container {
+        width: calc(100% - 32px);
+    }
+
+    .site-header {
+        height: 78px;
+    }
+
+    .header-container {
+        width: calc(100% - 32px);
+    }
+
+    .kartverket-logo {
+        width: 140px;
+    }
+
+    .menu-text {
+        display: none;
+    }
+
+    .menu-lines {
+        width: 32px;
+    }
+
+    .hero {
+        padding: 50px 0 65px;
+    }
+
+    .breadcrumb {
+        margin-bottom: 40px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 47px;
+    }
+
+    .hero-intro {
+        font-size: 18px;
+    }
+
+    .hero-tags span {
+        font-size: 13px;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .section-content h2 {
+        font-size: 35px;
+    }
+
+    .section-content .lead {
+        font-size: 19px;
+    }
+
+    .highlight-section {
+        padding-bottom: 65px;
+    }
+
+    .highlight-box {
+        padding: 30px 24px;
+    }
+
+    .highlight-content h2 {
+        font-size: 29px;
+    }
+
+    .info-card {
+        min-height: auto;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
