@@ -501,7 +501,9 @@ footer {
 
 @media (max-width: 950px) {
     .desktop-nav {
-        display: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
     }
 
     .brand-divider,
@@ -510,7 +512,7 @@ footer {
     }
 
     .menu-button {
-        margin-left: auto;
+        display: none;
     }
 
     .two-column {
