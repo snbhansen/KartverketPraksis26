@@ -132,38 +132,6 @@ img {
     border-radius: 2px;
 }
 
-.menu-button {
-    display: none;
-    align-items: center;
-    gap: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 6px;
-    color: var(--text);
-}
-
-.menu-text {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-}
-
-.menu-lines {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    width: 18px;
-}
-
-.menu-lines span {
-    display: block;
-    height: 2px;
-    background: currentColor;
-    border-radius: 2px;
-}
-
 /* ==================================================
    HERO (MATCHING OM-OSS SIDEN)
 ================================================== */
@@ -383,11 +351,6 @@ footer {
 
     .desktop-nav {
         display: none;
-    }
-
-    .menu-button {
-        display: flex;
-        margin-left: auto;
     }
 
     .hero {
