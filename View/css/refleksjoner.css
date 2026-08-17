@@ -1,164 +1,4 @@
 /* ==================================================
-   GRUNNSTIL & VARIABLER
-================================================== */
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-
-:root {
-	--green-dark: #006b3c;
-	--green: #168543;
-	--green-light: #d9f0df;
-	--green-lighter: #edf7f0;
-	--text: #202020;
-	--text-secondary: #565c58;
-	--border: #d5ded8;
-	--white: #ffffff;
-	--off-white: #f8f8f6;
-	--dark: #17342a;
-}
-
-html {
-	scroll-behavior: smooth;
-}
-
-body {
-	color: var(--text);
-	background: var(--white);
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
-	line-height: 1.6;
-	-webkit-font-smoothing: antialiased;
-}
-
-a {
-	color: inherit;
-}
-
-img {
-	max-width: 100%;
-}
-
-.content-container {
-	width: min(1180px, calc(100% - 48px));
-	margin: 0 auto;
-}
-
-/* ==================================================
-   HEADER
-================================================== */
-
-.site-header {
-	position: relative;
-	z-index: 10;
-	display: flex;
-	align-items: center;
-	height: 96px;
-	background: var(--white);
-	border-bottom: 1px solid #eeeeee;
-}
-
-.header-container {
-	display: flex;
-	align-items: center;
-	gap: 30px;
-	width: min(1440px, calc(100% - 64px));
-	margin: 0 auto;
-}
-
-.brand {
-	display: flex;
-	flex-shrink: 0;
-	align-items: center;
-	gap: 15px;
-	text-decoration: none;
-}
-
-.kartverket-logo {
-	display: block;
-	width: 168px;
-	height: auto;
-}
-
-.brand-divider {
-	width: 1px;
-	height: 27px;
-	background: #c9cecb;
-}
-
-.brand-project {
-	color: #666c68;
-	font-size: 14px;
-	font-weight: 500;
-	white-space: nowrap;
-}
-
-.desktop-nav {
-	display: flex;
-	align-items: center;
-	gap: 30px;
-	margin-left: auto;
-}
-
-.desktop-nav a {
-	position: relative;
-	padding: 12px 0;
-	color: #505651;
-	font-size: 14px;
-	font-weight: 500;
-	text-decoration: none;
-}
-
-.desktop-nav a:hover,
-.desktop-nav a.active {
-	color: var(--green-dark);
-}
-
-.desktop-nav a.active::after {
-	position: absolute;
-	bottom: 4px;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background: var(--green);
-	content: "";
-}
-
-.menu-button {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	margin-left: 10px;
-	padding: 8px;
-	color: var(--green-dark);
-	background: transparent;
-	border: 0;
-	cursor: pointer;
-}
-
-.menu-text {
-	font-size: 15px;
-	font-weight: 600;
-	letter-spacing: 0.06em;
-}
-
-.menu-lines {
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
-	width: 36px;
-}
-
-.menu-lines span {
-	display: block;
-	width: 100%;
-	height: 4px;
-	background: var(--green-dark);
-}
-
-/* ==================================================
    HERO
 ================================================== */
 
@@ -237,19 +77,20 @@ img {
 }
 
 .hero h1 {
-	margin-bottom: 24px;
-	color: var(--dark);
-	font-size: clamp(38px, 6vw, 68px);
-	font-weight: 800;
-	line-height: 1.05;
-	letter-spacing: -0.03em;
+	max-width: 820px;
+	margin-bottom: 34px;
+	font-size: clamp(48px, 6vw, 82px);
+	font-weight: 650;
+	line-height: 0.98;
+	letter-spacing: -0.04em;
 }
 
 .hero-intro {
-	max-width: 650px;
-	color: #2b3b32;
-	font-size: 18px;
-	line-height: 1.6;
+	max-width: 710px;
+	margin-bottom: 38px;
+	font-size: 21px;
+	font-weight: 500;
+	line-height: 1.55;
 }
 
 /* ==================================================
@@ -270,26 +111,28 @@ img {
 .journal-intro {
 	position: sticky;
 	top: 32px;
+	padding-top: 16px;
+	border-top: 2px solid var(--green);
 }
 
 .section-number {
-	margin-bottom: 6px;
-	color: var(--green);
-	font-size: 14px;
-	font-weight: 800;
-	letter-spacing: 0.08em;
+	margin-bottom: 5px;
+	color: var(--green-dark);
+	font-size: 13px;
+	font-weight: 700;
 }
 
 .journal-intro h2 {
 	margin-bottom: 12px;
-	color: var(--dark);
-	font-size: 28px;
+	font-size: 36px;
+	font-weight: 650;
 	line-height: 1.2;
+	letter-spacing: -0.025em;
 }
 
 .journal-intro > p:last-child {
-	color: var(--text-secondary);
-	font-size: 15px;
+	color: #414b45;
+	font-size: 14px;
 	line-height: 1.65;
 }
 
@@ -326,17 +169,17 @@ img {
 
 .entry-content h3 {
 	margin-bottom: 14px;
-	color: var(--dark);
-	font-size: clamp(24px, 3vw, 32px);
+	font-size: 29px;
+	font-weight: 650;
 	line-height: 1.2;
 	letter-spacing: -0.02em;
 }
 
 .entry-content > p:not(.entry-kicker) {
 	max-width: 690px;
-	color: #38423c;
+	color: var(--text-secondary);
 	font-size: 16px;
-	line-height: 1.7;
+	line-height: 1.75;
 }
 
 .entry-tags {
@@ -347,12 +190,12 @@ img {
 }
 
 .entry-tags span {
-	padding: 5px 11px;
+	padding: 8px 16px;
 	color: var(--green-dark);
 	background: var(--green-lighter);
 	border: 1px solid rgba(0, 107, 60, 0.16);
-	border-radius: 999px;
-	font-size: 12px;
+	border-radius: 100px;
+	font-size: 14px;
 	font-weight: 600;
 }
 
@@ -391,31 +234,9 @@ img {
 	display: none;
 }
 
-/* ==================================================
-   FOOTER & RESPONSIVITET
-================================================== */
-
-.site-footer {
-	padding: 28px 0;
-	color: #d9e8df;
-	background: var(--dark);
-}
-
-.site-footer .content-container {
-	display: flex;
-	justify-content: space-between;
-	gap: 20px;
-	font-size: 13px;
-}
 
 @media (max-width: 900px) {
-	.desktop-nav {
-		display: none;
-	}
 
-	.menu-button {
-		margin-left: auto;
-	}
 
 	.journal-layout {
 		grid-template-columns: 1fr;
@@ -429,27 +250,10 @@ img {
 }
 
 @media (max-width: 620px) {
-	.content-container {
-		width: min(100% - 32px, 1180px);
-	}
 
-	.site-header {
-		height: 76px;
-	}
 
-	.header-container {
-		width: min(100% - 32px, 1440px);
-	}
 
-	.kartverket-logo {
-		width: 130px;
-	}
 
-	.brand-divider,
-	.brand-project,
-	.menu-text {
-		display: none;
-	}
 
 	.hero {
 		padding: 48px 0 58px;
@@ -460,11 +264,15 @@ img {
 	}
 
 	.hero h1 {
-		font-size: 40px;
+		font-size: 47px;
 	}
 
 	.hero-intro {
-		font-size: 17px;
+		font-size: 18px;
+	}
+
+	.journal-intro h2 {
+		font-size: 29px;
 	}
 
 	.journal-section {
@@ -477,8 +285,5 @@ img {
 		padding: 30px 0;
 	}
 
-	.site-footer .content-container {
-		flex-direction: column;
-		gap: 4px;
-	}
+
 }
