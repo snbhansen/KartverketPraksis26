@@ -1,0 +1,2104 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kartverket Praksis 2026 | Praksisprosjekt IS-302</title>
+
+    <meta name="description"
+        content="Forsiden til praksisprosjektet IS-302 hos Kartverket våren 2026. Studentteam fra Universitetet i Agder som utvikler en AI-drevet økonomiveileder.">
+
+    <style>
+        /* ==================================================
+           GRUNNSTIL & VARIABLER
+        ================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --green-dark: #006b3c;
+            --green: #168543;
+            --green-light: #d9f0df;
+            --green-lighter: #edf7f0;
+
+            --text: #202020;
+            --text-secondary: #565c58;
+
+            --border: #d5ded8;
+
+            --white: #ffffff;
+            --off-white: #f8f8f6;
+
+            --dark: #17342a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: var(--text);
+            background: var(--white);
+
+            line-height: 1.6;
+
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .content-container {
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        /* ==================================================
+           HEADER
+        ================================================== */
+
+        .site-header {
+            height: 96px;
+            display: flex;
+            align-items: center;
+            background: var(--white);
+            border-bottom: 1px solid #eeeeee;
+            position: relative;
+            z-index: 20;
+        }
+
+        .header-container {
+            width: min(1440px, calc(100% - 64px));
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+
+        .kartverket-logo {
+            display: block;
+            width: 168px;
+            height: auto;
+        }
+
+        .brand-divider {
+            width: 1px;
+            height: 27px;
+            background: #c9cecb;
+        }
+
+        .brand-project {
+            color: #666c68;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .lang-switch {
+            position: relative;
+            margin-left: auto;
+        }
+
+        .lang-button {
+            padding: 10px 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 0;
+            color: #505651;
+            background: transparent;
+            font-family: inherit;
+            font-size: 15px;
+            cursor: pointer;
+            transition: color 150ms ease;
+        }
+
+        .lang-button:hover {
+            color: var(--green-dark);
+        }
+
+        .lang-caret {
+            width: 14px;
+            height: 14px;
+            transition: transform 150ms ease;
+        }
+
+        .lang-button[aria-expanded="true"] .lang-caret {
+            transform: rotate(180deg);
+        }
+
+        .lang-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            z-index: 30;
+            min-width: 160px;
+            padding: 6px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--white);
+            box-shadow: 0 10px 26px rgba(12, 43, 33, 0.15);
+        }
+
+        .lang-menu button {
+            width: 100%;
+            padding: 11px 12px;
+            display: block;
+            border: 0;
+            border-radius: 4px;
+            color: var(--text);
+            background: transparent;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 150ms ease, color 150ms ease;
+        }
+
+        .lang-menu button:hover {
+            color: var(--green-dark);
+            background: var(--green-lighter);
+        }
+
+        .lang-menu button[aria-current="true"] {
+            color: var(--green-dark);
+        }
+
+        .menu-button {
+            margin-left: 22px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px;
+            border: 0;
+            color: var(--green-dark);
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .menu-text {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+        }
+
+        .menu-lines {
+            width: 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-lines span {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: var(--green-dark);
+        }
+
+        /* ==================================================
+           MENYPANEL
+        ================================================== */
+
+        .menu-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 40;
+            background: rgba(12, 43, 33, 0.45);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 220ms ease, visibility 220ms ease;
+        }
+
+        .menu-overlay.is-open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 50;
+            width: min(420px, 100%);
+            height: 100%;
+            padding: 22px 30px 45px;
+            overflow-y: auto;
+            background: var(--white);
+            box-shadow: -8px 0 34px rgba(12, 43, 33, 0.2);
+            transform: translateX(100%);
+            transition: transform 250ms ease;
+        }
+
+        .menu-panel.is-open {
+            transform: translateX(0);
+        }
+
+        .menu-close {
+            margin: 0 -6px 20px auto;
+            display: block;
+            width: 46px;
+            height: 46px;
+            padding: 9px;
+            border: 0;
+            color: var(--green-dark);
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .menu-close svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .menu-panel .chevron {
+            color: currentColor;
+        }
+
+        .menu-primary a {
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: var(--text);
+            font-size: 17px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 150ms ease;
+        }
+
+        .menu-primary a:hover {
+            color: var(--green-dark);
+        }
+
+        .menu-primary .icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            color: var(--green-dark);
+        }
+
+        .menu-primary a > span {
+            margin-right: auto;
+        }
+
+        .menu-secondary {
+            margin-top: 26px;
+            border-top: 1px solid var(--border);
+        }
+
+        .menu-secondary a {
+            padding: 16px 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 150ms ease;
+        }
+
+        .menu-secondary a:hover,
+        .menu-secondary a.is-highlighted {
+            color: var(--green-dark);
+        }
+
+        .menu-panel a:hover .chevron {
+            transform: translateX(4px);
+        }
+
+        .menu-footer {
+            margin-top: 32px;
+        }
+
+        .menu-footer a {
+            color: var(--text);
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .menu-footer a:hover {
+            color: var(--green-dark);
+        }
+
+        body.has-open-menu {
+            overflow: hidden;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .menu-overlay,
+            .menu-panel {
+                transition: none;
+            }
+        }
+
+        /* ==================================================
+           HERO
+        ================================================== */
+
+        .hero {
+            position: relative;
+        }
+
+        .hero-banner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            min-height: 520px;
+            padding: 80px 0 215px;
+            overflow: hidden;
+            background: #bcdcea;
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            margin-bottom: 15px;
+            color: var(--green-dark);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .hero .eyebrow {
+            color: #c6e6d3;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin-bottom: 22px;
+            color: var(--white);
+            font-size: clamp(40px, 5.4vw, 70px);
+            font-weight: 650;
+            line-height: 1.02;
+            letter-spacing: -0.035em;
+        }
+
+        .hero-intro {
+            max-width: 570px;
+            color: #e7f1ec;
+            font-size: 19px;
+            font-weight: 500;
+            line-height: 1.55;
+        }
+
+        /* ==================================================
+           KORT SOM OVERLAPPER BANNERET
+        ================================================== */
+
+        .hero-lower {
+            padding-bottom: 60px;
+            background: var(--off-white);
+        }
+
+        .hero-cards {
+            position: relative;
+            z-index: 3;
+            margin-top: -175px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .hero-card {
+            padding: 28px 26px 24px;
+            border-radius: 8px;
+            background: var(--white);
+            box-shadow: 0 12px 34px rgba(13, 43, 34, 0.15);
+        }
+
+        .hero-card-title {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: var(--green-dark);
+            font-size: 21px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .hero-card-title .icon {
+            flex-shrink: 0;
+            width: 38px;
+            height: 38px;
+        }
+
+        .hero-card-title > span {
+            margin-right: auto;
+        }
+
+        .chevron {
+            flex-shrink: 0;
+            width: 17px;
+            height: 17px;
+            color: var(--green-dark);
+            transition: transform 150ms ease;
+        }
+
+        .hero-card-title:hover .chevron,
+        .hero-card-links a:hover .chevron {
+            transform: translateX(4px);
+        }
+
+        .hero-card-links a {
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 150ms ease;
+        }
+
+        .hero-card-links a:last-child {
+            border-bottom: 0;
+        }
+
+        .hero-card-links a:hover {
+            color: var(--green-dark);
+        }
+
+        .hero-links {
+            margin-top: 42px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .hero-links .button {
+            min-width: 0;
+        }
+
+        .button {
+            min-width: 385px;
+            padding: 11px 22px;
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            border: 1px solid var(--green-dark);
+            border-radius: 6px;
+            color: var(--green-dark);
+            background: transparent;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-align: left;
+            text-decoration: none;
+            word-break: normal;
+            transition: all 200ms ease;
+        }
+
+        .button:hover {
+            border-color: var(--green);
+            background: var(--green);
+            color: var(--white);
+        }
+
+        .button:active {
+            border-color: #05502a;
+            background: #05502a;
+            color: var(--white);
+        }
+
+        .button .arrow {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            transition: margin-right 100ms ease;
+        }
+
+        .button:hover .arrow {
+            margin-right: -3px;
+        }
+
+        /* ==================================================
+           CTA-BANNER
+        ================================================== */
+
+        .cta-banner {
+            padding: 26px 0;
+            color: var(--white);
+            background: var(--green-dark);
+        }
+
+        .cta-banner .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cta-banner p {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .cta-banner a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: 650;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .cta-banner a .arrow {
+            font-size: 20px;
+            transition: transform 150ms ease;
+        }
+
+        .cta-banner a:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        /* ==================================================
+           SEKSJONER
+        ================================================== */
+
+        .section {
+            padding: 110px 0;
+        }
+
+        .section-soft {
+            background: var(--off-white);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 220px minmax(0, 1fr);
+            gap: 90px;
+        }
+
+        .section-label {
+            align-self: start;
+            padding-top: 16px;
+            border-top: 2px solid var(--green);
+        }
+
+        .section-label span {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--green-dark);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .section-label p {
+            color: #414b45;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .section-content h2 {
+            max-width: 760px;
+            margin-bottom: 30px;
+            font-size: clamp(35px, 4vw, 52px);
+            font-weight: 650;
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+        }
+
+        .section-content > p {
+            max-width: 760px;
+            margin-bottom: 18px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .section-content .lead {
+            margin-bottom: 30px;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.55;
+        }
+
+        /* ==================================================
+           NAVIGASJONSKORT (ALLE SIDER)
+        ================================================== */
+
+        .nav-grid {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .nav-card {
+            min-height: 280px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border);
+            background: var(--white);
+            text-decoration: none;
+            transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--green);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-number {
+            display: block;
+            margin-bottom: 44px;
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .nav-card h3 {
+            margin-bottom: 11px;
+            font-size: 24px;
+            font-weight: 650;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-card p {
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .card-link {
+            margin-top: auto;
+            padding-top: 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--green-dark);
+            font-size: 15px;
+            font-weight: 650;
+        }
+
+        .card-link .arrow {
+            font-size: 22px;
+            transition: transform 150ms ease;
+        }
+
+        .nav-card:hover .card-link .arrow {
+            transform: translateX(6px);
+        }
+
+        /* ==================================================
+           HIGHLIGHT
+        ================================================== */
+
+        .highlight-section {
+            padding: 0 0 110px;
+        }
+
+        .highlight-box {
+            padding: 52px;
+            display: grid;
+            grid-template-columns: 140px minmax(0, 1fr);
+            gap: 48px;
+            background: var(--green-lighter);
+            border-top: 5px solid var(--green);
+        }
+
+        .highlight-number {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--white);
+            background: var(--green-dark);
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .small-heading {
+            margin-bottom: 12px;
+            color: var(--green-dark);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .highlight-content h2 {
+            margin-bottom: 18px;
+            font-size: 36px;
+            font-weight: 650;
+            line-height: 1.2;
+        }
+
+        .highlight-content > p:last-child {
+            max-width: 700px;
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        /* ==================================================
+           NØKKELTALL
+        ================================================== */
+
+        .fact-grid {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .fact {
+            padding-top: 22px;
+            border-top: 2px solid var(--green);
+        }
+
+        .fact strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 42px;
+            font-weight: 650;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+
+        .fact span {
+            color: var(--text-secondary);
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        /* ==================================================
+           SNARVEIER
+        ================================================== */
+
+        .shortcut-list {
+            margin-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .shortcut {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            transition: padding-left 150ms ease;
+        }
+
+        .shortcut:hover {
+            padding-left: 10px;
+        }
+
+        .shortcut h3 {
+            margin-bottom: 3px;
+            font-size: 19px;
+            font-weight: 650;
+        }
+
+        .shortcut p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .shortcut .arrow {
+            flex-shrink: 0;
+            color: var(--green-dark);
+            font-size: 25px;
+            transition: transform 150ms ease;
+        }
+
+        .shortcut:hover .arrow {
+            transform: translateX(6px);
+        }
+
+        /* ==================================================
+           MØRK SEKSJON
+        ================================================== */
+
+        .dark-section {
+            color: var(--white);
+            background: var(--dark);
+        }
+
+        .dark-label {
+            border-color: #84c99a;
+        }
+
+        .dark-label span,
+        .dark-label p {
+            color: #bde6c9;
+        }
+
+        .dark-section .lead {
+            color: #e0ebe4;
+        }
+
+        /* ==================================================
+           AVSLUTNING
+        ================================================== */
+
+        .why-section {
+            padding: 110px 0;
+            background: var(--green-lighter);
+        }
+
+        .why-section h2 {
+            max-width: 800px;
+            margin-bottom: 26px;
+            font-size: clamp(35px, 4.4vw, 56px);
+            font-weight: 650;
+            line-height: 1.06;
+            letter-spacing: -0.03em;
+        }
+
+        .why-section p {
+            max-width: 720px;
+            margin-bottom: 18px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .why-section .eyebrow {
+            font-size: 13px;
+        }
+
+        .back-link {
+            width: min(100%, 760px);
+            margin-top: 50px;
+            padding: 22px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--green);
+            border-bottom: 1px solid var(--green);
+            color: var(--green-dark);
+            font-size: 17px;
+            font-weight: 650;
+            text-decoration: none;
+        }
+
+        .back-link .arrow {
+            font-size: 25px;
+            transition: transform 150ms ease;
+        }
+
+        .back-link:hover .arrow {
+            transform: translateX(6px);
+        }
+
+        /* ==================================================
+           FOOTER
+        ================================================== */
+
+        footer {
+            padding: 55px 0;
+            color: var(--white);
+            background: #10241d;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            font-weight: 700;
+        }
+
+        .footer-brand + p {
+            margin-top: 14px;
+            color: #b9c6c0;
+            font-size: 14px;
+        }
+
+        .footer-right {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+        }
+
+        .footer-right a {
+            color: var(--white);
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .footer-right a:hover {
+            text-decoration: underline;
+        }
+
+        /* ==================================================
+           RESPONSIVITET
+        ================================================== */
+
+        @media (max-width: 950px) {
+            .brand-divider,
+            .brand-project {
+                display: none;
+            }
+
+            .hero-banner {
+                min-height: 420px;
+                padding: 60px 0 175px;
+            }
+
+            .hero-cards,
+            .hero-links {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cards {
+                margin-top: -140px;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .section-label {
+                max-width: 190px;
+            }
+
+            .section,
+            .why-section {
+                padding: 80px 0;
+            }
+
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fact-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .highlight-box {
+                grid-template-columns: 1fr;
+            }
+
+            .highlight-number {
+                width: 90px;
+                height: 90px;
+                font-size: 27px;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .content-container {
+                width: calc(100% - 32px);
+            }
+
+            .site-header {
+                height: 78px;
+            }
+
+            .header-container {
+                width: calc(100% - 32px);
+            }
+
+            .kartverket-logo {
+                width: 140px;
+            }
+
+            .menu-text {
+                display: none;
+            }
+
+            .menu-lines {
+                width: 32px;
+            }
+
+            .hero-banner {
+                min-height: 340px;
+                padding: 45px 0 150px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-intro {
+                font-size: 17px;
+            }
+
+            .hero-cards {
+                margin-top: -118px;
+                gap: 18px;
+            }
+
+            .hero-card {
+                padding: 24px 22px 20px;
+            }
+
+            .button {
+                min-width: 0;
+                gap: 20px;
+                font-size: 16px;
+            }
+
+            .cta-banner p {
+                font-size: 17px;
+            }
+
+            .section,
+            .why-section {
+                padding: 65px 0;
+            }
+
+            .section-content h2 {
+                font-size: 35px;
+            }
+
+            .section-content .lead {
+                font-size: 19px;
+            }
+
+            .nav-card {
+                min-height: auto;
+            }
+
+            .fact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlight-section {
+                padding-bottom: 65px;
+            }
+
+            .highlight-box {
+                padding: 30px 24px;
+            }
+
+            .highlight-content h2 {
+                font-size: 29px;
+            }
+
+            .shortcut {
+                align-items: flex-start;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-right {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-container">
+
+            <a href="index.html" class="brand" aria-label="Gå til forsiden">
+                <img src="../assets/images/kartverket-logo.svg" alt="Kartverket" class="kartverket-logo">
+
+                <span class="brand-divider" aria-hidden="true"></span>
+                <span class="brand-project" data-en="Internship 2026">Praksis 2026</span>
+            </a>
+
+            <div class="lang-switch">
+                <button class="lang-button" type="button" aria-expanded="false" aria-controls="sprakmeny">
+                    <span>Language</span>
+
+                    <svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="m5 9 7 7 7-7"></path>
+                    </svg>
+                </button>
+
+                <div class="lang-menu" id="sprakmeny" hidden>
+                    <button type="button" data-lang="no">Norsk</button>
+                    <button type="button" data-lang="en">English</button>
+                </div>
+            </div>
+
+            <button class="menu-button" type="button" aria-label="Åpne meny" aria-expanded="false"
+                aria-controls="hovedmeny">
+                <span class="menu-text">MENY</span>
+
+                <span class="menu-lines" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-banner">
+
+                <!-- Dekorativt bannerbilde: norsk kyst- og fjellandskap -->
+                <svg class="hero-image" viewBox="0 0 1440 560" preserveAspectRatio="xMidYMid slice"
+                    aria-hidden="true">
+                    <defs>
+                        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#a9d2e6"></stop>
+                            <stop offset="1" stop-color="#e6f1ee"></stop>
+                        </linearGradient>
+
+                        <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#4e93ac"></stop>
+                            <stop offset="1" stop-color="#2b6480"></stop>
+                        </linearGradient>
+
+                        <linearGradient id="scrim" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0" stop-color="#0c2b21" stop-opacity="0.8"></stop>
+                            <stop offset="0.55" stop-color="#0c2b21" stop-opacity="0.3"></stop>
+                            <stop offset="1" stop-color="#0c2b21" stop-opacity="0"></stop>
+                        </linearGradient>
+                    </defs>
+
+                    <rect width="1440" height="560" fill="url(#sky)"></rect>
+                    <circle cx="1210" cy="118" r="56" fill="#ffffff" opacity="0.5"></circle>
+
+                    <path
+                        d="M0 300 L150 208 L262 268 L392 172 L520 274 L644 212 L764 292 L900 198 L1042 280 L1180 204 L1322 278 L1440 222 L1440 348 L0 348 Z"
+                        fill="#8fb4b8" opacity="0.55"></path>
+
+                    <path
+                        d="M0 332 L122 266 L252 322 L382 248 L502 318 L622 266 L782 330 L922 260 L1062 324 L1202 266 L1342 326 L1440 288 L1440 378 L0 378 Z"
+                        fill="#5c8b78"></path>
+
+                    <path
+                        d="M0 378 L182 324 L342 368 L522 330 L702 374 L882 336 L1082 376 L1262 340 L1440 380 L1440 404 L0 404 Z"
+                        fill="#336854"></path>
+
+                    <rect y="404" width="1440" height="156" fill="url(#sea)"></rect>
+
+                    <g fill="#ffffff" opacity="0.13">
+                        <rect x="90" y="432" width="240" height="5" rx="2.5"></rect>
+                        <rect x="420" y="452" width="180" height="5" rx="2.5"></rect>
+                        <rect x="250" y="486" width="300" height="5" rx="2.5"></rect>
+                        <rect x="760" y="440" width="210" height="5" rx="2.5"></rect>
+                        <rect x="980" y="474" width="260" height="5" rx="2.5"></rect>
+                        <rect x="640" y="516" width="330" height="5" rx="2.5"></rect>
+                    </g>
+
+                    <!-- Sjøhus -->
+                    <g>
+                        <rect x="1084" y="368" width="46" height="32" fill="#a8362c"></rect>
+                        <path d="M1078 368 L1107 348 L1136 368 Z" fill="#8d2b23"></path>
+                        <rect x="1148" y="376" width="34" height="24" fill="#b84135"></rect>
+                        <path d="M1143 376 L1165 361 L1187 376 Z" fill="#8d2b23"></path>
+                    </g>
+
+                    <rect width="1440" height="560" fill="url(#scrim)"></rect>
+                </svg>
+
+                <div class="content-container hero-content">
+
+                    <p class="eyebrow" data-en="Internship project IS-302 · University of Agder">
+                        Praksisprosjekt IS-302 · Universitetet i Agder</p>
+
+                    <h1 data-en="Artificial intelligence in practice at Kartverket">
+                        Kunstig intelligens i praksis hos Kartverket
+                    </h1>
+
+                    <p class="hero-intro"
+                        data-en="We are a group of bachelor students developing an AI-powered financial adviser for Kartverket during the spring of 2026.">
+                        Vi er en gruppe bachelorstudenter som våren 2026 utvikler en
+                        AI-drevet økonomiveileder for Kartverket.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="hero-lower">
+                <div class="content-container">
+
+                    <div class="hero-cards">
+
+                        <article class="hero-card">
+                            <a href="oppgavebeskrivelse.html" class="hero-card-title">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path>
+                                    <path d="M14 3v5h5"></path>
+                                    <path d="M9 13h6M9 17h6"></path>
+                                </svg>
+
+                                <span data-en="The assignment">Oppgaven</span>
+
+                                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="m9 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+
+                            <nav class="hero-card-links" aria-label="Snarveier i oppgavebeskrivelsen">
+                                <a href="oppgavebeskrivelse.html#prosjektet" data-en="The project">
+                                    Prosjektet
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="oppgavebeskrivelse.html#arbeidsoppgaver" data-en="Tasks">
+                                    Arbeidsoppgaver
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="oppgavebeskrivelse.html#praksis" data-en="Internship at Kartverket">
+                                    Praksis hos Kartverket
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="oppgavebeskrivelse.html#studentgruppen" data-en="The student group">
+                                    Studentgruppen
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </nav>
+                        </article>
+
+                        <article class="hero-card">
+                            <a href="om-oss.html" class="hero-card-title">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M16 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9.5" cy="7.2" r="3.2"></circle>
+                                    <path d="M21 20v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M15.6 4.4a3.2 3.2 0 0 1 0 5.6"></path>
+                                </svg>
+
+                                <span data-en="About us">Om oss</span>
+
+                                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="m9 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+
+                            <nav class="hero-card-links" aria-label="Snarveier om studentteamet">
+                                <a href="om-oss.html#gruppen" data-en="Who are we?">
+                                    Hvem er vi?
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="om-oss.html#metodikk" data-en="Working methods">
+                                    Arbeidsmetodikk
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="om-oss.html#veiledning" data-en="Supervisors and partners">
+                                    Veiledere og partnere
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="om-oss.html#ambisjoner" data-en="Our ambitions">
+                                    Våre ambisjoner
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </nav>
+                        </article>
+
+                        <article class="hero-card">
+                            <a href="omkartverket.html" class="hero-card-title">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4z"></path>
+                                    <path d="M9 4v13M15 6.5v13"></path>
+                                </svg>
+
+                                <span data-en="About Kartverket">Om Kartverket</span>
+
+                                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="m9 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+
+                            <nav class="hero-card-links" aria-label="Snarveier om Kartverket">
+                                <a href="omkartverket.html#hvem" data-en="Who is Kartverket?">
+                                    Hvem er Kartverket?
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="omkartverket.html#fagomrader" data-en="Four areas of expertise">
+                                    Fire fagområder
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="omkartverket.html#informasjon-i-bruk" data-en="Information in use">
+                                    Informasjon i bruk
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="omkartverket.html#kontakt" data-en="Sources and further reading">
+                                    Kilde og videre lesing
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </nav>
+                        </article>
+
+                    </div>
+
+                    <div class="hero-links">
+
+                        <a href="refleksjoner.html" class="button">
+                            <span data-en="Reflections">Refleksjon</span>
+
+                            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <circle cx="12" cy="12" r="10.6"></circle>
+                                <path d="M7.9 12h8.2"></path>
+                                <path d="M12.6 8.5 16.1 12l-3.5 3.5"></path>
+                            </svg>
+                        </a>
+
+                        <a href="https://www.kartverket.no/" class="button" target="_blank"
+                            rel="noopener noreferrer">
+                            <span>kartverket.no</span>
+
+                            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <circle cx="12" cy="12" r="10.6"></circle>
+                                <path d="M7.9 12h8.2"></path>
+                                <path d="M12.6 8.5 16.1 12l-3.5 3.5"></path>
+                            </svg>
+                        </a>
+
+                        <a href="https://www.uia.no/" class="button" target="_blank"
+                            rel="noopener noreferrer">
+                            <span data-en="University of Agder">Universitetet i Agder</span>
+
+                            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <circle cx="12" cy="12" r="10.6"></circle>
+                                <path d="M7.9 12h8.2"></path>
+                                <path d="M12.6 8.5 16.1 12l-3.5 3.5"></path>
+                            </svg>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- CTA-BANNER -->
+        <section class="cta-banner">
+            <div class="content-container">
+                <p data-en="Curious about what we are actually going to build during the internship?">Vil du vite hva vi faktisk skal bygge i løpet av praksisperioden?</p>
+
+                <a href="oppgavebeskrivelse.html">
+                    <span data-en="Read more about the project">Les mer om prosjektet</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- SEKSJON 01: ALLE SIDENE -->
+        <section class="section">
+            <div class="content-container two-column">
+
+                <div class="section-label">
+                    <span>01</span>
+                    <p data-en="Explore">Utforsk</p>
+                </div>
+
+                <div class="section-content">
+
+                    <h2 data-en="What will you find here?">Hva finner du her?</h2>
+
+                    <p class="lead" data-en="This site brings together everything about our internship project: the assignment we were given, the people behind it, the organisation we work for and the experience we gain along the way.">
+                        Nettstedet samler alt om praksisprosjektet vårt: oppgaven vi har fått,
+                        menneskene bak, virksomheten vi jobber for og erfaringene vi gjør oss.
+                    </p>
+
+                    <div class="nav-grid">
+
+                        <a href="oppgavebeskrivelse.html" class="nav-card">
+                            <span class="card-number">01</span>
+                            <h3 data-en="Assignment description">Oppgavebeskrivelse</h3>
+                            <p data-en="The background of the project, the main goal of the AI-powered financial adviser and the tasks we will carry out.">
+                                Bakgrunnen for prosjektet, hovedmålet med den AI-drevne
+                                økonomiveilederen og arbeidsoppgavene vi skal løse.
+                            </p>
+                            <span class="card-link">
+                                <span data-en="Go to the assignment description">Gå til oppgavebeskrivelsen</span>
+                                <span class="arrow" aria-hidden="true">→</span>
+                            </span>
+                        </a>
+
+                        <a href="om-oss.html" class="nav-card">
+                            <span class="card-number">02</span>
+                            <h3 data-en="About us">Om oss</h3>
+                            <p data-en="Get to know the student team from the University of Agder, our working methods and our ambitions for the internship.">
+                                Bli kjent med studentteamet fra Universitetet i Agder,
+                                arbeidsmetodikken vår og ambisjonene for praksisperioden.
+                            </p>
+                            <span class="card-link">
+                                <span data-en="Meet the group">Møt gruppen</span>
+                                <span class="arrow" aria-hidden="true">→</span>
+                            </span>
+                        </a>
+
+                        <a href="omkartverket.html" class="nav-card">
+                            <span class="card-number">03</span>
+                            <h3 data-en="About Kartverket">Om Kartverket</h3>
+                            <p data-en="Who Kartverket is, the four areas of expertise - property, land, sea and geodata - and how the information is used in society.">
+                                Hvem Kartverket er, de fire fagområdene eiendom, land, sjø og
+                                geodata, og hvordan informasjonen brukes i samfunnet.
+                            </p>
+                            <span class="card-link">
+                                <span data-en="Read about the agency">Les om etaten</span>
+                                <span class="arrow" aria-hidden="true">→</span>
+                            </span>
+                        </a>
+
+                        <a href="refleksjoner.html" class="nav-card">
+                            <span class="card-number">04</span>
+                            <h3 data-en="Reflections">Refleksjon</h3>
+                            <p data-en="Our logbook of experiences, discoveries and turning points. The page keeps growing throughout the internship.">
+                                Loggboken vår med erfaringer, oppdagelser og vendepunkter.
+                                Siden bygges videre på gjennom hele praksisperioden.
+                            </p>
+                            <span class="card-link">
+                                <span data-en="See the reflections">Se refleksjonene</span>
+                                <span class="arrow" aria-hidden="true">→</span>
+                            </span>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- HIGHLIGHT -->
+        <section class="highlight-section">
+            <div class="content-container">
+
+                <div class="highlight-box">
+
+                    <div class="highlight-number">
+                        AI
+                    </div>
+
+                    <div class="highlight-content">
+                        <p class="small-heading" data-en="The main goal">Hovedmålet</p>
+
+                        <h2 data-en="Making financial knowledge easier to access">
+                            Gjøre økonomisk kunnskap lettere tilgjengelig
+                        </h2>
+
+                        <p data-en="The financial adviser will help managers and employees with common financial questions, and make it easier to find the right information without the finance department having to answer the same things manually again and again.">
+                            Økonomiveilederen skal hjelpe ledere og ansatte med vanlige økonomiske
+                            spørsmål, og gjøre det enklere å finne riktig informasjon uten at
+                            økonomiavdelingen må svare manuelt på det samme flere ganger.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SEKSJON 02: NØKKELTALL -->
+        <section class="section section-soft">
+            <div class="content-container two-column">
+
+                <div class="section-label">
+                    <span>02</span>
+                    <p data-en="In brief">Kort fortalt</p>
+                </div>
+
+                <div class="section-content">
+
+                    <h2 data-en="The internship project in numbers">Praksisprosjektet i tall</h2>
+
+                    <p class="lead" data-en="A real assignment in an organisation of great public value, carried out as part of the IS-302 course at the University of Agder.">
+                        Et reelt oppdrag i en virksomhet med stor samfunnsnytte, gjennomført
+                        som en del av emnet IS-302 ved Universitetet i Agder.
+                    </p>
+
+                    <div class="fact-grid">
+
+                        <div class="fact">
+                            <strong>2026</strong>
+                            <span data-en="Internship period, spring">Praksisperiode, vår</span>
+                        </div>
+
+                        <div class="fact">
+                            <strong>5</strong>
+                            <span data-en="Students on the team">Studenter i teamet</span>
+                        </div>
+
+                        <div class="fact">
+                            <strong>800</strong>
+                            <span data-en="Employees at Kartverket">Ansatte i Kartverket</span>
+                        </div>
+
+                        <div class="fact">
+                            <strong>4</strong>
+                            <span data-en="Areas of expertise to understand">Fagområder å forstå</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SEKSJON 03: SNARVEIER -->
+        <section class="section">
+            <div class="content-container two-column">
+
+                <div class="section-label">
+                    <span>03</span>
+                    <p data-en="Shortcuts">Snarveier</p>
+                </div>
+
+                <div class="section-content">
+
+                    <h2 data-en="Get there quickly">Kom raskt videre</h2>
+
+                    <p class="lead" data-en="The most used entry points to the content on this site.">
+                        De mest brukte inngangene til innholdet på nettstedet.
+                    </p>
+
+                    <div class="shortcut-list">
+
+                        <a href="oppgavebeskrivelse.html" class="shortcut">
+                            <div>
+                                <h3 data-en="What will we work on?">Hva skal vi jobbe med?</h3>
+                                <p data-en="The tasks and deliverables of the internship project">Arbeidsoppgavene og leveransene i praksisprosjektet</p>
+                            </div>
+                            <span class="arrow" aria-hidden="true">→</span>
+                        </a>
+
+                        <a href="om-oss.html" class="shortcut">
+                            <div>
+                                <h3 data-en="How do we work together?">Hvordan jobber vi sammen?</h3>
+                                <p data-en="Agile methods, user proximity and version control">Smidig metodikk, brukernærhet og versjonskontroll</p>
+                            </div>
+                            <span class="arrow" aria-hidden="true">→</span>
+                        </a>
+
+                        <a href="omkartverket.html" class="shortcut">
+                            <div>
+                                <h3 data-en="What does Kartverket do?">Hva gjør Kartverket?</h3>
+                                <p data-en="Property, on land, at sea and geodata work">Eiendom, til lands, til sjøs og geodataarbeid</p>
+                            </div>
+                            <span class="arrow" aria-hidden="true">→</span>
+                        </a>
+
+                        <a href="refleksjoner.html" class="shortcut">
+                            <div>
+                                <h3 data-en="Logbook from the internship">Loggbok fra praksisperioden</h3>
+                                <p data-en="Reflections and experiences, updated as we go">Refleksjoner og erfaringer, oppdatert underveis</p>
+                            </div>
+                            <span class="arrow" aria-hidden="true">→</span>
+                        </a>
+
+                        <a href="https://www.kartverket.no/" class="shortcut" target="_blank"
+                            rel="noopener noreferrer">
+                            <div>
+                                <h3>kartverket.no</h3>
+                                <p data-en="Kartverket&apos;s official website">Kartverkets offisielle nettsted</p>
+                            </div>
+                            <span class="arrow" aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SEKSJON 04: FAGOMRÅDER -->
+        <section class="section dark-section">
+            <div class="content-container two-column">
+
+                <div class="section-label dark-label">
+                    <span>04</span>
+                    <p data-en="Interdisciplinary">Tverrfaglig</p>
+                </div>
+
+                <div class="section-content">
+
+                    <h2 data-en="At the intersection of many disciplines">I skjæringspunktet mellom mange fag</h2>
+
+                    <p class="lead" data-en="We work closely with experienced professionals across areas of expertise at Kartverket.">
+                        Vi jobber tett sammen med erfarne fagpersoner på tvers av fagområder
+                        i Kartverket.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- AVSLUTNING -->
+        <section class="why-section">
+            <div class="content-container">
+
+                <p class="eyebrow" data-en="Why did we choose Kartverket?">Hvorfor valgte vi Kartverket?</p>
+
+                <h2 data-en="Technology, data and public value.">
+                    Teknologi, data og samfunnsnytte.
+                </h2>
+
+                <p data-en="Kartverket develops and manages data and services used every single day by the public sector, businesses and residents across Norway. The data matters for emergency preparedness, climate, property, transport and land management, among other things.">
+                    Kartverket utvikler og forvalter data og tjenester som brukes hver eneste dag
+                    av offentlig sektor, næringsliv og innbyggere over hele Norge. Dataene er
+                    viktige innen blant annet beredskap, klima, eiendom, samferdsel og
+                    arealforvaltning.
+                </p>
+
+                <p data-en="Through the internship project we get to work at the intersection of technology, data, finance and public value.">
+                    Gjennom praksisprosjektet får vi arbeide i skjæringspunktet mellom teknologi,
+                    data, økonomi og samfunnsnytte.
+                </p>
+
+                <a href="om-oss.html" class="back-link">
+                    <span data-en="Get to know the student team">Bli kjent med studentteamet</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="content-container footer-content">
+
+            <div>
+                <p class="footer-brand">Kartverket</p>
+                <p data-en="Internship project IS-302 · 2026">Praksisprosjekt IS-302 · 2026</p>
+            </div>
+
+            <div class="footer-right">
+                <a href="index.html">Hjem</a>
+                <a href="oppgavebeskrivelse.html">Oppgavebeskrivelse</a>
+                <a href="prosjektdagbok.html">Prosjektdagbok</a>
+                <a href="refleksjoner.html">Refleksjon</a>
+                <a href="om-oss.html">Om oss</a>
+                <a href="omkartverket.html">Om Kartverket</a>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- MENYPANEL -->
+    <div class="menu-overlay" hidden></div>
+
+    <div class="menu-panel" id="hovedmeny" role="dialog" aria-modal="true" aria-label="Hovedmeny" hidden>
+
+        <button class="menu-close" type="button" aria-label="Lukk meny">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
+                stroke-linecap="round" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18"></path>
+            </svg>
+        </button>
+
+        <nav class="menu-primary" aria-label="Hovedsider">
+
+            <a href="oppgavebeskrivelse.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path>
+                    <path d="M14 3v5h5"></path>
+                    <path d="M9 13h6M9 17h6"></path>
+                </svg>
+
+                <span data-en="The assignment">Oppgaven</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="om-oss.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M16 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9.5" cy="7.2" r="3.2"></circle>
+                    <path d="M21 20v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M15.6 4.4a3.2 3.2 0 0 1 0 5.6"></path>
+                </svg>
+
+                <span data-en="About us">Om oss</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="omkartverket.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4z"></path>
+                    <path d="M9 4v13M15 6.5v13"></path>
+                </svg>
+
+                <span data-en="About Kartverket">Om Kartverket</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+        </nav>
+
+        <nav class="menu-secondary" aria-label="Flere sider">
+
+            <a href="refleksjoner.html" data-en="Reflections">
+                Refleksjon
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="oppgavebeskrivelse.html#arbeidsoppgaver" data-en="Tasks">
+                Arbeidsoppgaver
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="om-oss.html#veiledning" data-en="Supervisors and partners">
+                Veiledere og partnere
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="https://www.kartverket.no/" class="is-highlighted" target="_blank"
+                rel="noopener noreferrer">
+                kartverket.no
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+        </nav>
+
+        <div class="menu-footer">
+            <a href="index.html" data-en="Home">Hjem</a>
+        </div>
+
+    </div>
+
+
+    <script>
+        // ---------- SPRÅKVELGER ----------
+        (function () {
+            var langSwitch = document.querySelector(".lang-switch");
+            var langButton = langSwitch.querySelector(".lang-button");
+            var langMenu = document.getElementById("sprakmeny");
+            var langOptions = langMenu.querySelectorAll("button[data-lang]");
+            var translatable = document.querySelectorAll("[data-en]");
+
+            var titles = {
+                no: "Kartverket Praksis 2026 | Praksisprosjekt IS-302",
+                en: "Kartverket Internship 2026 | Internship project IS-302"
+            };
+
+            // Finner tekstnoden i elementet, slik at ikoner og piler ikke røres.
+            function textNode(element) {
+                for (var i = 0; i < element.childNodes.length; i++) {
+                    var node = element.childNodes[i];
+
+                    if (node.nodeType === 3 && node.textContent.trim() !== "") {
+                        return node;
+                    }
+                }
+
+                return null;
+            }
+
+            // Tar vare på den norske teksten før noe blir byttet ut.
+            Array.prototype.forEach.call(translatable, function (element) {
+                var node = textNode(element);
+
+                if (node) {
+                    element.setAttribute("data-no", node.textContent.trim());
+                }
+            });
+
+            function setLanguage(language) {
+                Array.prototype.forEach.call(translatable, function (element) {
+                    var node = textNode(element);
+                    var text = element.getAttribute(language === "en" ? "data-en" : "data-no");
+
+                    if (node && text) {
+                        node.textContent = text;
+                    }
+                });
+
+                document.documentElement.lang = language;
+                document.title = titles[language];
+
+                Array.prototype.forEach.call(langOptions, function (option) {
+                    option.setAttribute("aria-current", option.getAttribute("data-lang") === language ? "true" : "false");
+                });
+
+                try {
+                    window.localStorage.setItem("sprak", language);
+                } catch (error) {
+                    // Lagring kan være blokkert. Språkvalget gjelder da bare denne økten.
+                }
+            }
+
+            function closeLangMenu() {
+                langMenu.hidden = true;
+                langButton.setAttribute("aria-expanded", "false");
+            }
+
+            langButton.addEventListener("click", function () {
+                if (langMenu.hidden) {
+                    langMenu.hidden = false;
+                    langButton.setAttribute("aria-expanded", "true");
+                } else {
+                    closeLangMenu();
+                }
+            });
+
+            Array.prototype.forEach.call(langOptions, function (option) {
+                option.addEventListener("click", function () {
+                    setLanguage(option.getAttribute("data-lang"));
+                    closeLangMenu();
+                    langButton.focus();
+                });
+            });
+
+            document.addEventListener("click", function (event) {
+                if (!langSwitch.contains(event.target)) {
+                    closeLangMenu();
+                }
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape") {
+                    closeLangMenu();
+                }
+            });
+
+            // Henter fram språkvalget fra forrige besøk.
+            var stored = null;
+
+            try {
+                stored = window.localStorage.getItem("sprak");
+            } catch (error) {
+                stored = null;
+            }
+
+            setLanguage(stored === "en" ? "en" : "no");
+        })();
+
+
+        // ---------- MENYPANEL ----------
+        (function () {
+            var button = document.querySelector(".menu-button");
+            var panel = document.querySelector(".menu-panel");
+            var overlay = document.querySelector(".menu-overlay");
+            var closeButton = document.querySelector(".menu-close");
+
+            // Åpner panelet: gjør det synlig først, slik at overgangen kan spilles av.
+            function openMenu() {
+                panel.hidden = false;
+                overlay.hidden = false;
+
+                window.requestAnimationFrame(function () {
+                    panel.classList.add("is-open");
+                    overlay.classList.add("is-open");
+                });
+
+                document.body.classList.add("has-open-menu");
+                button.setAttribute("aria-expanded", "true");
+                closeButton.focus();
+            }
+
+            // Lukker panelet og skjuler det helt når overgangen er ferdig.
+            function closeMenu() {
+                panel.classList.remove("is-open");
+                overlay.classList.remove("is-open");
+
+                document.body.classList.remove("has-open-menu");
+                button.setAttribute("aria-expanded", "false");
+                button.focus();
+
+                window.setTimeout(function () {
+                    if (!panel.classList.contains("is-open")) {
+                        panel.hidden = true;
+                        overlay.hidden = true;
+                    }
+                }, 250);
+            }
+
+            button.addEventListener("click", openMenu);
+            closeButton.addEventListener("click", closeMenu);
+            overlay.addEventListener("click", closeMenu);
+
+            document.addEventListener("keydown", function (event) {
+                if (panel.classList.contains("is-open") && event.key === "Escape") {
+                    closeMenu();
+                }
+            });
+
+            // Holder tastaturfokus inne i panelet så lenge det er åpent.
+            panel.addEventListener("keydown", function (event) {
+                if (event.key !== "Tab") {
+                    return;
+                }
+
+                var focusable = panel.querySelectorAll("button, a[href]");
+                var first = focusable[0];
+                var last = focusable[focusable.length - 1];
+
+                if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault();
+                    last.focus();
+                } else if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault();
+                    first.focus();
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
