@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="no" data-title-en="About us | Kartverket Internship">
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
     <meta name="description"
         content="Møt studentteamet fra Universitetet i Agder (IS-302) i praksis hos Kartverket våren 2026.">
 
+    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/om-oss.css">
 </head>
 
@@ -22,22 +23,29 @@
             <a href="index.html" class="brand" aria-label="Gå til forsiden">
                 <img src="../assets/images/kartverket-logo.svg" alt="Kartverket" class="kartverket-logo">
 
-                <span class="brand-divider"></span>
-                <span class="brand-project">Praksis 2026</span>
+                <span class="brand-divider" aria-hidden="true"></span>
+                <span class="brand-project" data-en="Internship 2026">Praksis 2026</span>
             </a>
 
-            <nav class="desktop-nav" aria-label="Hovedmeny">
-                <a href="index.html">Hjem</a>
-                <a href="oppgavebeskrivelse.html">Oppgavebeskrivelse</a>
-                <a href="prosjektdagbok.html">Prosjektdagbok</a>
-                <a href="refleksjoner.html">Refleksjon</a>
-                <a href="om-oss.html"class="active" aria-current="page">Om oss</a>
-                <a href="omkartverket.html">Om Kartverket</a>
-                <a href="status1.html">Status 1</a>
-            </nav>
+            <div class="lang-switch">
+                <button class="lang-button" type="button" aria-expanded="false" aria-controls="sprakmeny">
+                    <span>Language</span>
 
-            <button class="menu-button" type="button" aria-label="Åpne meny">
-                <span class="menu-text">MENY</span>
+                    <svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="m5 9 7 7 7-7"></path>
+                    </svg>
+                </button>
+
+                <div class="lang-menu" id="sprakmeny" hidden>
+                    <button type="button" data-lang="no">Norsk</button>
+                    <button type="button" data-lang="en">English</button>
+                </div>
+            </div>
+
+            <button class="menu-button" type="button" aria-label="Åpne meny" aria-expanded="false"
+                aria-controls="hovedmeny">
+                <span class="menu-text" data-en="MENU">MENY</span>
 
                 <span class="menu-lines" aria-hidden="true">
                     <span></span>
@@ -59,29 +67,29 @@
             <div class="content-container hero-content">
 
                 <div class="breadcrumb">
-                    <a href="index.html">Praksis 2026</a>
+                    <a href="index.html" data-en="Internship 2026">Praksis 2026</a>
                     <span aria-hidden="true">←</span>
-                    <span>Om oss</span>
+                    <span data-en="About us">Om oss</span>
                 </div>
 
-                <p class="eyebrow">Praksisprosjekt IS-302</p>
+                <p class="eyebrow" data-en="Internship project IS-302">Praksisprosjekt IS-302</p>
 
-                <h1>
-                    Møt studentene bak<br>
-                    prosjektet
+                <h1 data-en="Meet the students behind the project">
+                    Møt studentene bak prosjektet
                 </h1>
 
-                <p class="hero-intro">
+                <p class="hero-intro"
+                    data-en="We are a group of bachelor students from the University of Agder carrying out our internship at Kartverket during the spring of 2026. Together we will develop innovative solutions at the intersection of AI, technology and public value.">
                     Vi er en gruppe bachelorstudenter fra Universitetet i Agder som gjennomfører
                     praksisperioden vår hos Kartverket våren 2026. Sammen skal vi utvikle
                     innovative løsninger i skjæringspunktet mellom AI, teknologi og samfunnsnytte.
                 </p>
 
                 <div class="hero-tags">
-                    <span>Universitetet i Agder</span>
+                    <span data-en="University of Agder">Universitetet i Agder</span>
                     <span>Kartverket</span>
-                    <span>IS-302 Praksis</span>
-                    <span>Tverrfaglig team</span>
+                    <span data-en="IS-302 Internship">IS-302 Praksis</span>
+                    <span data-en="Interdisciplinary team">Tverrfaglig team</span>
                 </div>
 
             </div>
@@ -94,14 +102,14 @@
 
                 <div class="section-label">
                     <span>01</span>
-                    <p>Gruppen</p>
+                    <p data-en="The group">Gruppen</p>
                 </div>
 
                 <div class="section-content">
 
-                    <h2>Hvem er vi?</h2>
+                    <h2 data-en="Who are we?">Hvem er vi?</h2>
 
-                    <p class="lead">
+                    <p class="lead" data-en="The team consists of dedicated students with complementary expertise in systems development, interaction design, artificial intelligence and project management.">
                         Teamet består av engasjerte studenter med komplementær kompetanse innen
                         systemutvikling, interaksjonsdesign, kunstig intelligens og prosjektstyring.
                     </p>
@@ -116,7 +124,7 @@
                                 </div>
                                 <div class="member-identity">
                                     <h3>Oskar Moberg Kirkbride</h3>
-                                    <span class="member-role">Utvikler & Frontend</span>
+                                    <span class="member-role" data-en="Developer & Frontend">Utvikler & Frontend</span>
                                 </div>
                             </div>
                             <div class="member-body">
@@ -127,14 +135,14 @@
                                         <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                                         <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                                     </svg>
-                                    <span>IT og informasjonssystemer, UiA</span>
+                                    <span data-en="IT and Information Systems, UiA">IT og informasjonssystemer, UiA</span>
                                 </div>
-                                <p class="member-bio">
+                                <p class="member-bio" data-en="Focused on holistic architecture and frontend experiences. Passionate about building user-friendly digital tools.">
                                     Fokus på helhetlig arkitektur og frontend-opplevelser. Brenner for å bygge
                                     brukervennlige digitale verktøy.
                                 </p>
                                 <div class="member-skills">
-                                    <span class="skill-tag">Webutvikling</span>
+                                    <span class="skill-tag" data-en="Web development">Webutvikling</span>
                                     <span class="skill-tag">Python</span>
                                     <span class="skill-tag">AI</span>
                                     <span class="skill-tag">C#</span>
@@ -171,7 +179,7 @@
 
         <div class="member-identity">
             <h3>Isak Gulaker</h3>
-            <span class="member-role">Prosjektstyring &amp; Utvikler</span>
+            <span class="member-role" data-en="Project management &amp; Developer">Prosjektstyring &amp; Utvikler</span>
         </div>
     </div>
 
@@ -183,18 +191,18 @@
                 <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                 <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
             </svg>
-            <span>IT og informasjonssystemer, UiA</span>
+            <span data-en="IT and Information Systems, UiA">IT og informasjonssystemer, UiA</span>
         </div>
 
-        <p class="member-bio">
+        <p class="member-bio" data-en="Interested in project management, systems development and building good digital solutions. Enjoys combining a positive attitude with structure, collaboration and technical development in projects.">
             Interessert i prosjektstyring, systemutvikling og å bygge gode digitale løsninger.
             Liker å kombinere positiv innstilling med struktur, samarbeid og teknisk utvikling i prosjekter.
         </p>
 
         <div class="member-skills">
-            <span class="skill-tag">Prosjektstyring</span>
-            <span class="skill-tag">Utvikling</span>
-            <span class="skill-tag">Systemdesign</span>
+            <span class="skill-tag" data-en="Project management">Prosjektstyring</span>
+            <span class="skill-tag" data-en="Development">Utvikling</span>
+            <span class="skill-tag" data-en="System design">Systemdesign</span>
             <span class="skill-tag">Fullstack</span>
             <span class="skill-tag">Team-building</span>
         </div>
@@ -228,8 +236,8 @@
                                     <span>KP</span>
                                 </div>
                                 <div class="member-identity">
-                                    <h3>Gruppemedlem 3</h3>
-                                    <span class="member-role">"Spesialitet"</span>
+                                    <h3 data-en="Group member 3">Gruppemedlem 3</h3>
+                                    <span class="member-role" data-en="&quot;Speciality&quot;">"Spesialitet"</span>
                                 </div>
                             </div>
                             <div class="member-body">
@@ -240,9 +248,9 @@
                                         <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                                         <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                                     </svg>
-                                    <span>IT og informasjonssystemer, UiA</span>
+                                    <span data-en="IT and Information Systems, UiA">IT og informasjonssystemer, UiA</span>
                                 </div>
-                                <p class="member-bio">
+                                <p class="member-bio" data-en="&quot;Area of responsibility&quot;">
                                     "Ansvarsområde"
                                 </p>
                                 <div class="member-skills">
@@ -276,8 +284,8 @@
                                     <span>KP</span>
                                 </div>
                                 <div class="member-identity">
-                                    <h3>Gruppemedlem 4</h3>
-                                    <span class="member-role">"Spesialitet"</span>
+                                    <h3 data-en="Group member 4">Gruppemedlem 4</h3>
+                                    <span class="member-role" data-en="&quot;Speciality&quot;">"Spesialitet"</span>
                                 </div>
                             </div>
                             <div class="member-body">
@@ -288,9 +296,9 @@
                                         <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                                         <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                                     </svg>
-                                    <span>IT og informasjonssystemer, UiA</span>
+                                    <span data-en="IT and Information Systems, UiA">IT og informasjonssystemer, UiA</span>
                                 </div>
-                                <p class="member-bio">
+                                <p class="member-bio" data-en="&quot;Area of responsibility&quot;">
                                     "Ansvarsområde"
                                 </p>
                                 <div class="member-skills">
@@ -324,8 +332,8 @@
                                     <span>KP</span>
                                 </div>
                                 <div class="member-identity">
-                                    <h3>Gruppemedlem 5</h3>
-                                    <span class="member-role">"Spesialitet"</span>
+                                    <h3 data-en="Group member 5">Gruppemedlem 5</h3>
+                                    <span class="member-role" data-en="&quot;Speciality&quot;">"Spesialitet"</span>
                                 </div>
                             </div>
                             <div class="member-body">
@@ -336,9 +344,9 @@
                                         <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                                         <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                                     </svg>
-                                    <span>IT og informasjonssystemer, UiA</span>
+                                    <span data-en="IT and Information Systems, UiA">IT og informasjonssystemer, UiA</span>
                                 </div>
-                                <p class="member-bio">
+                                <p class="member-bio" data-en="&quot;Area of responsibility&quot;">
                                     "Ansvarsområde"
                                 </p>
                                 <div class="member-skills">
@@ -383,13 +391,13 @@
                     </div>
 
                     <div class="highlight-content">
-                        <p class="small-heading">Vår filosofi</p>
+                        <p class="small-heading" data-en="Our philosophy">Vår filosofi</p>
 
-                        <h2>
+                        <h2 data-en="Combining theory and practice for real public value">
                             Kombinerer teori og praksis for reell samfunnsnytte
                         </h2>
 
-                        <p>
+                        <p data-en="Through the internship at Kartverket we get to test academic knowledge against real, operational challenges. We work closely as a team to deliver a solution that creates genuine value for managers and employees.">
                             Gjennom praksisen i Kartverket får vi teste ut akademisk kunnskap på reelle, operative
                             utfordringer. Vi jobber tett sammen som team for å levere en løsning som skaper faktisk
                             verdi for ledere og ansatte.
@@ -407,14 +415,14 @@
 
                 <div class="section-label">
                     <span>02</span>
-                    <p>Metodikk</p>
+                    <p data-en="Methodology">Metodikk</p>
                 </div>
 
                 <div class="section-content">
 
-                    <h2>Hvordan jobber vi sammen?</h2>
+                    <h2 data-en="How do we work together?">Hvordan jobber vi sammen?</h2>
 
-                    <p class="lead">
+                    <p class="lead" data-en="We follow agile principles with a focus on frequent iterations, close user involvement and continuous evaluation.">
                         Vi følger smidige prinsipper med fokus på hyppige iterasjoner, tett brukermedvirkning og
                         kontinuerlig evaluering.
                     </p>
@@ -423,8 +431,8 @@
 
                         <div class="method-card">
                             <div class="method-icon">01</div>
-                            <h3>Smidig utvikling</h3>
-                            <p>
+                            <h3 data-en="Agile development">Smidig utvikling</h3>
+                            <p data-en="We work in weekly sprints with regular standups, planning and retrospectives to ensure steady progress.">
                                 Vi jobber i ukentlige sprinter med faste standups, planlegging og retrospektiver for å
                                 sikre jevn fremdrift.
                             </p>
@@ -432,8 +440,8 @@
 
                         <div class="method-card">
                             <div class="method-icon">02</div>
-                            <h3>Brukernærhet</h3>
-                            <p>
+                            <h3 data-en="Closeness to users">Brukernærhet</h3>
+                            <p data-en="We involve employees and managers at Kartverket early through interviews, observation and user testing of prototypes.">
                                 Vi involverer ansatte og ledere i Kartverket tidlig gjennom intervjuer, observasjon og
                                 brukertesting av prototyper.
                             </p>
@@ -441,8 +449,8 @@
 
                         <div class="method-card">
                             <div class="method-icon">03</div>
-                            <h3>Kvalitet & Versjonskontroll</h3>
-                            <p>
+                            <h3 data-en="Quality & version control">Kvalitet & Versjonskontroll</h3>
+                            <p data-en="All code is managed on GitHub with code reviews, documented commits and continuous testing.">
                                 All kode forvaltes på GitHub med code reviews, dokumenterte commits og kontinuerlig
                                 testing.
                             </p>
@@ -461,14 +469,14 @@
 
                 <div class="section-label">
                     <span>03</span>
-                    <p>Veiledning</p>
+                    <p data-en="Supervision">Veiledning</p>
                 </div>
 
                 <div class="section-content">
 
-                    <h2>Veiledere og støttespillere</h2>
+                    <h2 data-en="Supervisors and supporters">Veiledere og støttespillere</h2>
 
-                    <p class="lead">
+                    <p class="lead" data-en="The project is carried out with good supervision from both Kartverket and the University of Agder.">
                         Prosjektet gjennomføres med god veiledning fra både Kartverket og Universitetet i Agder.
                     </p>
 
@@ -477,9 +485,9 @@
                         <div class="supervisor-card">
                             <div class="supervisor-info">
                                 <span class="supervisor-badge">Kartverket</span>
-                                <h3>Veileder hos Kartverket</h3>
-                                <p class="supervisor-org">Fagavdelingen / IT</p>
-                                <p class="supervisor-desc">
+                                <h3 data-en="Supervisor at Kartverket">Veileder hos Kartverket</h3>
+                                <p class="supervisor-org" data-en="Professional department / IT">Fagavdelingen / IT</p>
+                                <p class="supervisor-desc" data-en="Provides domain knowledge, organisational understanding, data access and technical sparring within Kartverket.">
                                     Bistår med domenekunnskap, organisasjonsforståelse, datatilgang og teknisk sparring
                                     internt i Kartverket.
                                 </p>
@@ -488,10 +496,10 @@
 
                         <div class="supervisor-card">
                             <div class="supervisor-info">
-                                <span class="supervisor-badge">Universitetet i Agder</span>
-                                <h3>Fagansvarlig ved UiA</h3>
-                                <p class="supervisor-org">Institutt for informasjonssystemer</p>
-                                <p class="supervisor-desc">
+                                <span class="supervisor-badge" data-en="University of Agder">Universitetet i Agder</span>
+                                <h3 data-en="Academic supervisor at UiA">Fagansvarlig ved UiA</h3>
+                                <p class="supervisor-org" data-en="Department of Information Systems">Institutt for informasjonssystemer</p>
+                                <p class="supervisor-desc" data-en="Academic follow-up, guidance on research method, report writing and assessment of the internship period (IS-302).">
                                     Faglig oppfølging, veiledning på akademisk metode, rapportskriving og vurdering av
                                     praksisperioden (IS-302).
                                 </p>
@@ -511,18 +519,18 @@
 
                 <div class="section-label">
                     <span>04</span>
-                    <p>Mål</p>
+                    <p data-en="Goals">Mål</p>
                 </div>
 
                 <div class="section-content">
 
-                    <h2>Våre ambisjoner for praksisperioden</h2>
+                    <h2 data-en="Our ambitions for the internship period">Våre ambisjoner for praksisperioden</h2>
 
                     <div class="check-list">
 
                         <div class="check-item">
                             <span>→</span>
-                            <p>
+                            <p data-en="Gain in-depth experience with developing and implementing modern AI solutions in the public sector.">
                                 Få inngående erfaring med utvikling og implementering av moderne AI-løsninger i
                                 offentlig sektor.
                             </p>
@@ -530,14 +538,14 @@
 
                         <div class="check-item">
                             <span>→</span>
-                            <p>
+                            <p data-en="Strengthen our skills in teamwork, agile project methodology and professional communication.">
                                 Styrke kompetansen innen teamarbeid, smidig prosjektmetodikk og faglig formidling.
                             </p>
                         </div>
 
                         <div class="check-item">
                             <span>→</span>
-                            <p>
+                            <p data-en="Create a real, working tool that adds value for Kartverket&apos;s employees after the internship ends.">
                                 Skape et reelt, fungerende verktøy som gir merverdi for Kartverkets ansatte etter endt
                                 praksis.
                             </p>
@@ -554,19 +562,19 @@
         <section class="why-section">
             <div class="content-container">
 
-                <p class="eyebrow">Vil du vite mer?</p>
+                <p class="eyebrow" data-en="Want to know more?">Vil du vite mer?</p>
 
-                <h2>
+                <h2 data-en="Read about our assignment in detail.">
                     Les om oppgaven vår i detalj.
                 </h2>
 
-                <p>
+                <p data-en="On the assignment description page you will find detailed information about the background of the project, the research question, our methods and the deliverables for Kartverket.">
                     På oppgavebeskrivelsessiden finner du utfyllende informasjon om prosjektets bakgrunn,
                     problemstilling, metoder og leveranser for Kartverket.
                 </p>
 
                 <a href="oppgavebeskrivelse.html" class="back-link">
-                    <span>Gå til oppgavebeskrivelsen</span>
+                    <span data-en="Go to the assignment description">Gå til oppgavebeskrivelsen</span>
                     <span class="arrow">→</span>
                 </a>
 
@@ -582,22 +590,177 @@
 
             <div>
                 <p class="footer-brand">Kartverket</p>
-                <p>Praksisprosjekt IS-302 · 2026</p>
+                <p data-en="Internship project IS-302 · 2026">Praksisprosjekt IS-302 · 2026</p>
             </div>
 
             <div class="footer-right">
-                <a href="index.html">Hjem</a>
-                <a href="oppgavebeskrivelse.html">Oppgavebeskrivelse</a>
-                <a href="om-oss.html">Om oss</a>
-                <a href="prosjektdagbok.html">Prosjektdagbok</a>
-                <a href="refleksjoner.html">Refleksjon</a>
-                <a href="omkartverket.html">Om Kartverket</a>
+                <a href="index.html" data-en="Home">Hjem</a>
+                <a href="oppgavebeskrivelse.html" data-en="Assignment description">Oppgavebeskrivelse</a>
+                <a href="prosjektdagbok.html" data-en="Project diary">Prosjektdagbok</a>
+                <a href="refleksjoner.html" data-en="Reflections">Refleksjon</a>
+                <a href="om-oss.html" data-en="About us">Om oss</a>
+                <a href="omkartverket.html" data-en="About Kartverket">Om Kartverket</a>
                 <a href="status1.html">Status 1</a>
                 <a href="status2.html">Status 2</a>
             </div>
 
         </div>
     </footer>
+
+
+
+    <!-- MENYPANEL -->
+    <div class="menu-overlay" hidden></div>
+
+    <div class="menu-panel" id="hovedmeny" role="dialog" aria-modal="true" aria-label="Hovedmeny" hidden>
+
+        <button class="menu-close" type="button" aria-label="Lukk meny">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
+                stroke-linecap="round" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18"></path>
+            </svg>
+        </button>
+
+        <nav class="menu-primary" aria-label="Hovedsider">
+
+            <a href="oppgavebeskrivelse.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path>
+                    <path d="M14 3v5h5"></path>
+                    <path d="M9 13h6M9 17h6"></path>
+                </svg>
+
+                <span data-en="The assignment">Oppgaven</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="om-oss.html" aria-current="page">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M16 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9.5" cy="7.2" r="3.2"></circle>
+                    <path d="M21 20v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M15.6 4.4a3.2 3.2 0 0 1 0 5.6"></path>
+                </svg>
+
+                <span data-en="About us">Om oss</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="omkartverket.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4z"></path>
+                    <path d="M9 4v13M15 6.5v13"></path>
+                </svg>
+
+                <span data-en="About Kartverket">Om Kartverket</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+        </nav>
+
+        <nav class="menu-secondary" aria-label="Flere sider">
+
+            <a href="prosjektdagbok.html" data-en="Project diary">
+                Prosjektdagbok
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="refleksjoner.html" data-en="Reflections">
+                Refleksjon
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <div class="status-menu">
+
+                <button class="status-menu-button" type="button" aria-expanded="false">
+                    <span>Status</span>
+
+                    <svg class="chevron status-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="m9 5 7 7-7 7"></path>
+                    </svg>
+                </button>
+
+                <div class="status-submenu" hidden>
+
+                    <a href="status1.html">
+                        <span>Status 1</span>
+
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="m9 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
+
+                    <a href="status2.html">
+                        <span>Status 2</span>
+
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="m9 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <a href="oppgavebeskrivelse.html#arbeidsoppgaver" data-en="Tasks">
+                Arbeidsoppgaver
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="om-oss.html#veiledning" data-en="Supervisors and partners">
+                Veiledere og partnere
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="https://www.kartverket.no/" class="is-highlighted" target="_blank"
+                rel="noopener noreferrer">
+                kartverket.no
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+        </nav>
+
+        <div class="menu-footer">
+            <a href="index.html" data-en="Home">Hjem</a>
+        </div>
+
+    </div>
+
+
+    <script src="js/site.js"></script>
 
 </body>
 
