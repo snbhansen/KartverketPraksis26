@@ -1,0 +1,749 @@
+/* ==================================================
+   FORSIDEN
+
+   Felles stil (variabler, header, meny, footer)
+   ligger i css/global.css.
+================================================== */
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    position: relative;
+}
+
+.hero-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 520px;
+    padding: 80px 0 215px;
+    overflow: hidden;
+    background: #bcdcea;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    margin-bottom: 15px;
+    color: var(--green-dark);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero .eyebrow {
+    color: #c6e6d3;
+}
+
+.hero h1 {
+    max-width: 800px;
+    margin-bottom: 22px;
+    color: var(--white);
+    font-size: clamp(40px, 5.4vw, 70px);
+    font-weight: 650;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+}
+
+.hero-intro {
+    max-width: 570px;
+    color: #e7f1ec;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+
+/* ==================================================
+   KORT SOM OVERLAPPER BANNERET
+================================================== */
+
+.hero-lower {
+    padding-bottom: 60px;
+    background: var(--off-white);
+}
+
+.hero-cards {
+    position: relative;
+    z-index: 3;
+    margin-top: -175px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.hero-card {
+    padding: 28px 26px 24px;
+    border-radius: 8px;
+    background: var(--white);
+    box-shadow: 0 12px 34px rgba(13, 43, 34, 0.15);
+}
+
+.hero-card-title {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--green-dark);
+    font-size: 21px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hero-card-title .icon {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+}
+
+.hero-card-title > span {
+    margin-right: auto;
+}
+
+.hero-card-title:hover .chevron,
+.hero-card-links a:hover .chevron {
+    transform: translateX(4px);
+}
+
+.hero-card-links a {
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+
+.hero-card-links a:last-child {
+    border-bottom: 0;
+}
+
+.hero-card-links a:hover {
+    color: var(--green-dark);
+}
+
+.hero-links {
+    margin-top: 42px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.hero-links .button {
+    min-width: 0;
+}
+
+.button {
+    min-width: 385px;
+    padding: 11px 22px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    border: 1px solid var(--green-dark);
+    border-radius: 6px;
+    color: var(--green-dark);
+    background: transparent;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: left;
+    text-decoration: none;
+    word-break: normal;
+    transition: all 200ms ease;
+}
+
+.button:hover {
+    border-color: var(--green);
+    background: var(--green);
+    color: var(--white);
+}
+
+.button:active {
+    border-color: #05502a;
+    background: #05502a;
+    color: var(--white);
+}
+
+.button .arrow {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    transition: margin-right 100ms ease;
+}
+
+.button:hover .arrow {
+    margin-right: -3px;
+}
+
+
+/* ==================================================
+   CTA-BANNER
+================================================== */
+
+/*
+    Meldingskortet ligger i det lyse feltet under hero-kortene,
+    på samme måte som varselkortene på kartverket.no.
+*/
+
+.cta-banner {
+    padding: 0 0 70px;
+    background: var(--off-white);
+}
+
+.cta-card {
+    padding: 20px 26px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 24px;
+    border: 1px solid rgba(0, 107, 60, 0.25);
+    border-radius: 8px;
+    color: var(--green-dark);
+    background: var(--green-light);
+    text-decoration: none;
+    transition: all 200ms ease;
+}
+
+/* Samme hover som knappene over: fylles med grønt og hvit tekst. */
+
+.cta-card:hover {
+    border-color: var(--green);
+    background: var(--green);
+    color: var(--white);
+}
+
+.cta-card:active {
+    border-color: #05502a;
+    background: #05502a;
+    color: var(--white);
+}
+
+.cta-icon {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+}
+
+/*
+    flex-basis holder ikonet og teksten på samme linje.
+    Lenken legger seg under når det blir for smalt.
+*/
+
+.cta-card p {
+    flex: 1 1 260px;
+    font-size: 17px;
+    font-weight: 650;
+}
+
+.cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.cta-link .arrow {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    transition: margin-right 100ms ease;
+}
+
+.cta-card:hover .arrow {
+    margin-right: -3px;
+}
+
+
+/* ==================================================
+   SEKSJONER
+================================================== */
+
+.section {
+    padding: 110px 0;
+}
+
+.section-soft {
+    background: var(--off-white);
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 90px;
+}
+
+.section-label {
+    align-self: start;
+    padding-top: 16px;
+    border-top: 2px solid var(--green);
+}
+
+.section-label span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--green-dark);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.section-label p {
+    color: #414b45;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.section-content h2 {
+    max-width: 760px;
+    margin-bottom: 30px;
+    font-size: clamp(35px, 4vw, 52px);
+    font-weight: 650;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+}
+
+.section-content > p {
+    max-width: 760px;
+    margin-bottom: 18px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.section-content .lead {
+    margin-bottom: 30px;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+
+/* ==================================================
+   NAVIGASJONSKORT (ALLE SIDER)
+================================================== */
+
+.nav-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.nav-card {
+    min-height: 280px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    background: var(--white);
+    text-decoration: none;
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.nav-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--green);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.card-number {
+    display: block;
+    margin-bottom: 44px;
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.nav-card h3 {
+    margin-bottom: 11px;
+    font-size: 24px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+}
+
+.nav-card p {
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.card-link {
+    margin-top: auto;
+    padding-top: 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--green-dark);
+    font-size: 15px;
+    font-weight: 650;
+}
+
+.card-link .arrow {
+    font-size: 22px;
+    transition: transform 150ms ease;
+}
+
+.nav-card:hover .card-link .arrow {
+    transform: translateX(6px);
+}
+
+
+/* ==================================================
+   HIGHLIGHT
+================================================== */
+
+.highlight-section {
+    padding: 0 0 110px;
+}
+
+.highlight-box {
+    padding: 52px;
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 48px;
+    background: var(--green-lighter);
+    border-top: 5px solid var(--green);
+}
+
+.highlight-number {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--white);
+    background: var(--green-dark);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.small-heading {
+    margin-bottom: 12px;
+    color: var(--green-dark);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.highlight-content h2 {
+    margin-bottom: 18px;
+    font-size: 36px;
+    font-weight: 650;
+    line-height: 1.2;
+}
+
+.highlight-content > p:last-child {
+    max-width: 700px;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+
+/* ==================================================
+   NØKKELTALL
+================================================== */
+
+.fact-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.fact {
+    padding-top: 22px;
+    border-top: 2px solid var(--green);
+}
+
+.fact strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 42px;
+    font-weight: 650;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.fact span {
+    color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* ==================================================
+   SNARVEIER
+================================================== */
+
+.shortcut-list {
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+}
+
+.shortcut {
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    transition: padding-left 150ms ease;
+}
+
+.shortcut:hover {
+    padding-left: 10px;
+}
+
+.shortcut h3 {
+    margin-bottom: 3px;
+    font-size: 19px;
+    font-weight: 650;
+}
+
+.shortcut p {
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+.shortcut .arrow {
+    flex-shrink: 0;
+    color: var(--green-dark);
+    font-size: 25px;
+    transition: transform 150ms ease;
+}
+
+.shortcut:hover .arrow {
+    transform: translateX(6px);
+}
+
+
+/* ==================================================
+   MØRK SEKSJON
+================================================== */
+
+.dark-section {
+    color: var(--white);
+    background: var(--dark);
+}
+
+.dark-label {
+    border-color: #84c99a;
+}
+
+.dark-label span,
+.dark-label p {
+    color: #bde6c9;
+}
+
+.dark-section .lead {
+    color: #e0ebe4;
+}
+
+
+/* ==================================================
+   AVSLUTNING
+================================================== */
+
+.why-section {
+    padding: 110px 0;
+    background: var(--green-lighter);
+}
+
+.why-section h2 {
+    max-width: 800px;
+    margin-bottom: 26px;
+    font-size: clamp(35px, 4.4vw, 56px);
+    font-weight: 650;
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+}
+
+.why-section p {
+    max-width: 720px;
+    margin-bottom: 18px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.why-section .eyebrow {
+    font-size: 13px;
+}
+
+.back-link {
+    width: min(100%, 760px);
+    margin-top: 50px;
+    padding: 22px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--green);
+    border-bottom: 1px solid var(--green);
+    color: var(--green-dark);
+    font-size: 17px;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.back-link .arrow {
+    font-size: 25px;
+    transition: transform 150ms ease;
+}
+
+.back-link:hover .arrow {
+    transform: translateX(6px);
+}
+
+
+/* ==================================================
+   RESPONSIVITET
+================================================== */
+
+@media (max-width: 950px) {
+
+    .hero-banner {
+        min-height: 420px;
+        padding: 60px 0 175px;
+    }
+
+    .hero-cards,
+    .hero-links {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-cards {
+        margin-top: -140px;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .section-label {
+        max-width: 190px;
+    }
+
+    .section,
+    .why-section {
+        padding: 80px 0;
+    }
+
+    .nav-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .highlight-box {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-number {
+        width: 90px;
+        height: 90px;
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 620px) {
+
+    .hero-banner {
+        min-height: 340px;
+        padding: 45px 0 150px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-intro {
+        font-size: 17px;
+    }
+
+    .hero-cards {
+        margin-top: -118px;
+        gap: 18px;
+    }
+
+    .hero-card {
+        padding: 24px 22px 20px;
+    }
+
+    .button {
+        min-width: 0;
+        gap: 20px;
+        font-size: 16px;
+    }
+
+    .cta-banner {
+        padding-bottom: 50px;
+    }
+
+    .cta-card {
+        padding: 20px 22px;
+    }
+
+    .cta-card p {
+        font-size: 16px;
+    }
+
+    .section,
+    .why-section {
+        padding: 65px 0;
+    }
+
+    .section-content h2 {
+        font-size: 35px;
+    }
+
+    .section-content .lead {
+        font-size: 19px;
+    }
+
+    .nav-card {
+        min-height: auto;
+    }
+
+    .fact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight-section {
+        padding-bottom: 65px;
+    }
+
+    .highlight-box {
+        padding: 30px 24px;
+    }
+
+    .highlight-content h2 {
+        font-size: 29px;
+    }
+
+    .shortcut {
+        align-items: flex-start;
+    }
+}
