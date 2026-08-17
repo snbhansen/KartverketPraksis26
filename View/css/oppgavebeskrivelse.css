@@ -1,216 +1,4 @@
 /* ==================================================
-   GRUNNSTIL
-================================================== */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-:root {
-    --green-dark: #006b3c;
-    --green: #168543;
-    --green-light: #d9f0df;
-    --green-lighter: #edf7f0;
-
-    --text: #202020;
-    --text-secondary: #565c58;
-
-    --border: #d5ded8;
-
-    --white: #ffffff;
-    --off-white: #f8f8f6;
-
-    --dark: #17342a;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    color: var(--text);
-    background: var(--white);
-
-    line-height: 1.6;
-
-    -webkit-font-smoothing: antialiased;
-}
-
-a {
-    color: inherit;
-}
-
-img {
-    max-width: 100%;
-}
-
-.content-container {
-    width: min(1180px, calc(100% - 48px));
-    margin: 0 auto;
-}
-
-
-/* ==================================================
-   HEADER
-================================================== */
-
-.site-header {
-    height: 96px;
-
-    display: flex;
-    align-items: center;
-
-    background: var(--white);
-
-    border-bottom: 1px solid #eeeeee;
-
-    position: relative;
-    z-index: 20;
-}
-
-.header-container {
-    width: min(1440px, calc(100% - 64px));
-
-    margin: 0 auto;
-
-    display: flex;
-    align-items: center;
-
-    gap: 30px;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-
-    gap: 15px;
-
-    flex-shrink: 0;
-
-    text-decoration: none;
-}
-
-.kartverket-logo {
-    display: block;
-
-    width: 168px;
-    height: auto;
-}
-
-.brand-divider {
-    width: 1px;
-    height: 27px;
-
-    background: #c9cecb;
-}
-
-.brand-project {
-    color: #666c68;
-
-    font-size: 14px;
-    font-weight: 500;
-
-    white-space: nowrap;
-}
-
-.desktop-nav {
-    margin-left: auto;
-
-    display: flex;
-    align-items: center;
-
-    gap: 30px;
-}
-
-.desktop-nav a {
-    position: relative;
-
-    padding: 12px 0;
-
-    color: #505651;
-
-    font-size: 14px;
-    font-weight: 500;
-
-    text-decoration: none;
-
-    transition: color 150ms ease;
-}
-
-.desktop-nav a:hover,
-.desktop-nav a.active {
-    color: var(--green-dark);
-}
-
-.desktop-nav a.active::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: 4px;
-
-    width: 100%;
-    height: 2px;
-
-    background: var(--green);
-}
-
-.menu-button {
-    margin-left: 10px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 8px;
-
-    border: 0;
-
-    color: var(--green-dark);
-    background: transparent;
-
-    cursor: pointer;
-}
-
-.menu-text {
-    font-size: 15px;
-    font-weight: 600;
-
-    letter-spacing: 0.06em;
-}
-
-.menu-lines {
-    width: 36px;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 5px;
-}
-
-.menu-lines span {
-    display: block;
-
-    width: 100%;
-    height: 4px;
-
-    background: var(--green-dark);
-}
-
-
-/* ==================================================
    HERO
 ================================================== */
 
@@ -758,93 +546,13 @@ img {
 
 
 /* ==================================================
-   FOOTER
-================================================== */
-
-.site-footer {
-    padding: 55px 0;
-
-    color: var(--white);
-    background: #10241d;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    gap: 40px;
-}
-
-.footer-brand {
-    display: flex;
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 14px;
-}
-
-.footer-logo {
-    width: 155px;
-    height: auto;
-
-    /*
-        Kartverket-logoen inneholder mørk tekst.
-        Den får derfor en lys bakgrunn slik at den
-        beholder originalfargene og er lett å lese.
-    */
-
-    padding: 10px 12px;
-
-    background: var(--white);
-
-    border-radius: 2px;
-}
-
-.footer-brand p {
-    color: #b9c6c0;
-
-    font-size: 14px;
-}
-
-.footer-right {
-    display: flex;
-
-    gap: 28px;
-}
-
-.footer-right a {
-    color: var(--white);
-
-    font-size: 14px;
-
-    text-decoration: none;
-}
-
-.footer-right a:hover {
-    text-decoration: underline;
-}
-
-
-/* ==================================================
    RESPONSIV - NETTBRETT
 ================================================== */
 
 @media (max-width: 950px) {
 
-    .desktop-nav {
-        display: none;
-    }
 
-    .brand-divider,
-    .brand-project {
-        display: none;
-    }
 
-    .menu-button {
-        margin-left: auto;
-    }
 
     .two-column {
         grid-template-columns: 1fr;
@@ -884,29 +592,11 @@ img {
 
 @media (max-width: 620px) {
 
-    .content-container {
-        width: calc(100% - 32px);
-    }
 
-    .site-header {
-        height: 78px;
-    }
 
-    .header-container {
-        width: calc(100% - 32px);
-    }
 
-    .kartverket-logo {
-        width: 140px;
-    }
 
-    .menu-text {
-        display: none;
-    }
 
-    .menu-lines {
-        width: 32px;
-    }
 
     .hero {
         padding: 50px 0 65px;
@@ -970,16 +660,6 @@ img {
         font-size: 44px;
     }
 
-    .footer-content {
-        flex-direction: column;
 
-        align-items: flex-start;
-    }
-
-    .footer-right {
-        flex-direction: column;
-
-        gap: 8px;
-    }
 
 }
