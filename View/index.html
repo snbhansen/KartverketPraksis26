@@ -335,6 +335,74 @@
             color: var(--green-dark);
         }
 
+        /* ==================================================
+   STATUS UNDERSMENY
+================================================== */
+
+.status-menu {
+    border-bottom: 1px solid var(--border);
+}
+
+.status-menu-button {
+    width: 100%;
+    padding: 16px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    border: 0;
+    color: var(--text);
+    background: transparent;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    transition: color 150ms ease;
+}
+
+.status-menu-button:hover {
+    color: var(--green-dark);
+}
+
+.status-menu-button[aria-expanded="true"] {
+    color: var(--green-dark);
+}
+
+.status-chevron {
+    transition: transform 150ms ease;
+}
+
+.status-menu-button[aria-expanded="true"] .status-chevron {
+    transform: rotate(90deg);
+}
+
+.status-submenu {
+    padding: 0 0 8px 20px;
+}
+
+.status-submenu a {
+    padding: 12px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    border-bottom: 0;
+    color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.status-submenu a:hover {
+    color: var(--green-dark);
+}
+
+.status-submenu a .chevron {
+    width: 15px;
+    height: 15px;
+}
+
         .menu-panel a:hover .chevron {
             transform: translateX(4px);
         }
@@ -1889,13 +1957,38 @@
                 </svg>
             </a>
 
-            <a href="status1.html" data-en="Status 1">
-                Status 1
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="m9 5 7 7-7 7"></path>
-                </svg>
-            </a>
+           <div class="status-menu">
+
+    <button class="status-menu-button" type="button" aria-expanded="false">
+        <span>Status</span>
+
+        <svg class="chevron status-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m9 5 7 7-7 7"></path>
+        </svg>
+    </button>
+
+    <div class="status-submenu" hidden>
+        <a href="status1.html">
+            <span>Status 1</span>
+    
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m9 5 7 7-7 7"></path>
+            </svg>
+        </a>
+    
+        <a href="status2.html">
+            <span>Status 2</span>
+    
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m9 5 7 7-7 7"></path>
+            </svg>
+        </a>
+    </div>
+    
+    </div>
 
             <a href="oppgavebeskrivelse.html#arbeidsoppgaver" data-en="Tasks">
                 Arbeidsoppgaver
@@ -2044,6 +2137,8 @@
             var panel = document.querySelector(".menu-panel");
             var overlay = document.querySelector(".menu-overlay");
             var closeButton = document.querySelector(".menu-close");
+            var statusButton = document.querySelector(".status-menu-button");
+            var statusSubmenu = document.querySelector(".status-submenu");
 
             // Åpner panelet: gjør det synlig først, slik at overgangen kan spilles av.
             function openMenu() {
@@ -2103,6 +2198,19 @@
                 } else if (!event.shiftKey && document.activeElement === last) {
                     event.preventDefault();
                     first.focus();
+                }
+            });
+
+            // ---------- STATUS UNDERSMENY ----------
+            statusButton.addEventListener("click", function () {
+                var isOpen = statusButton.getAttribute("aria-expanded") === "true";
+
+                if (isOpen) {
+                    statusSubmenu.hidden = true;
+                    statusButton.setAttribute("aria-expanded", "false");
+                } else {
+                    statusSubmenu.hidden = false;
+                    statusButton.setAttribute("aria-expanded", "true");
                 }
             });
         })();
