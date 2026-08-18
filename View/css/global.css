@@ -1,0 +1,548 @@
+/* ==================================================
+   GLOBAL: FELLES GRUNNSTIL FOR HELE NETTSTEDET
+
+   Denne filen inneholder alt som skal se likt ut på
+   alle sidene: variabler, typografi, header med
+   språkvelger, menypanelet og bunnteksten.
+
+   Sidespesifikk stil ligger i css/<side>.css og
+   lastes etter denne filen.
+================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --green-dark: #006b3c;
+    --green: #168543;
+    --green-light: #d9f0df;
+    --green-lighter: #edf7f0;
+
+    --text: #202020;
+    --text-secondary: #565c58;
+
+    --border: #d5ded8;
+
+    --white: #ffffff;
+    --off-white: #f8f8f6;
+
+    --dark: #17342a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--text);
+    background: var(--white);
+
+    line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+.content-container {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.site-header {
+    min-height: 96px;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+    z-index: 20;
+}
+
+.header-container {
+    width: min(1440px, calc(100% - 64px));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.kartverket-logo {
+    display: block;
+    width: 168px;
+    height: auto;
+}
+
+.brand-divider {
+    width: 1px;
+    height: 27px;
+    background: #c9cecb;
+}
+
+.brand-project {
+    color: #666c68;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+
+/* ==================================================
+   SPRÅKVELGER
+================================================== */
+
+.lang-switch {
+    position: relative;
+    margin-left: auto;
+}
+
+.lang-button {
+    padding: 10px 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    color: #505651;
+    background: transparent;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition: color 150ms ease;
+}
+
+.lang-button:hover {
+    color: var(--green-dark);
+}
+
+.lang-caret {
+    width: 14px;
+    height: 14px;
+    transition: transform 150ms ease;
+}
+
+.lang-button[aria-expanded="true"] .lang-caret {
+    transform: rotate(180deg);
+}
+
+.lang-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 30;
+    min-width: 160px;
+    padding: 6px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--white);
+    box-shadow: 0 10px 26px rgba(12, 43, 33, 0.15);
+}
+
+.lang-menu button {
+    width: 100%;
+    padding: 11px 12px;
+    display: block;
+    border: 0;
+    border-radius: 4px;
+    color: var(--text);
+    background: transparent;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 150ms ease, color 150ms ease;
+}
+
+.lang-menu button:hover {
+    color: var(--green-dark);
+    background: var(--green-lighter);
+}
+
+.lang-menu button[aria-current="true"] {
+    color: var(--green-dark);
+}
+
+
+/* ==================================================
+   MENYKNAPP
+================================================== */
+
+.menu-button {
+    margin-left: 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border: 0;
+    color: var(--green-dark);
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-text {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+
+.menu-lines {
+    width: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-lines span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: var(--green-dark);
+}
+
+
+/* ==================================================
+   MENYPANEL
+================================================== */
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    background: rgba(12, 43, 33, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 220ms ease, visibility 220ms ease;
+}
+
+.menu-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 50;
+    width: min(420px, 100%);
+    height: 100%;
+    padding: 22px 30px 45px;
+    overflow-y: auto;
+    background: var(--white);
+    box-shadow: -8px 0 34px rgba(12, 43, 33, 0.2);
+    transform: translateX(100%);
+    transition: transform 250ms ease;
+}
+
+.menu-panel.is-open {
+    transform: translateX(0);
+}
+
+.menu-close {
+    margin: 0 -6px 20px auto;
+    display: block;
+    width: 46px;
+    height: 46px;
+    padding: 9px;
+    border: 0;
+    color: var(--green-dark);
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-close svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.chevron {
+    flex-shrink: 0;
+    width: 17px;
+    height: 17px;
+    color: var(--green-dark);
+    transition: transform 150ms ease;
+}
+
+.menu-panel .chevron {
+    color: currentColor;
+}
+
+.menu-primary a {
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--text);
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+
+.menu-primary a:hover,
+.menu-primary a[aria-current="page"] {
+    color: var(--green-dark);
+}
+
+.menu-primary .icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    color: var(--green-dark);
+}
+
+.menu-primary a > span {
+    margin-right: auto;
+}
+
+.menu-secondary {
+    margin-top: 26px;
+    border-top: 1px solid var(--border);
+}
+
+.menu-secondary > a {
+    padding: 16px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+
+.menu-secondary > a:hover,
+.menu-secondary > a.is-highlighted,
+.menu-secondary > a[aria-current="page"] {
+    color: var(--green-dark);
+}
+
+.menu-panel a:hover .chevron {
+    transform: translateX(4px);
+}
+
+.menu-footer {
+    margin-top: 32px;
+}
+
+.menu-footer a {
+    color: var(--text);
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.menu-footer a:hover,
+.menu-footer a[aria-current="page"] {
+    color: var(--green-dark);
+}
+
+body.has-open-menu {
+    overflow: hidden;
+}
+
+
+/* ==================================================
+   STATUS UNDERMENY
+================================================== */
+
+.status-menu {
+    border-bottom: 1px solid var(--border);
+}
+
+.status-menu-button {
+    width: 100%;
+    padding: 16px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    border: 0;
+    color: var(--text);
+    background: transparent;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    transition: color 150ms ease;
+}
+
+.status-menu-button:hover,
+.status-menu-button[aria-expanded="true"] {
+    color: var(--green-dark);
+}
+
+.status-chevron {
+    transition: transform 150ms ease;
+}
+
+.status-menu-button[aria-expanded="true"] .status-chevron {
+    transform: rotate(90deg);
+}
+
+.status-submenu {
+    padding: 0 0 8px 20px;
+}
+
+.status-submenu a {
+    padding: 12px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    border-bottom: 0;
+    color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.status-submenu a:hover,
+.status-submenu a[aria-current="page"] {
+    color: var(--green-dark);
+}
+
+.status-submenu a .chevron {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    padding: 55px 0;
+    color: var(--white);
+    background: #10241d;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+.footer-brand {
+    font-weight: 700;
+}
+
+.footer-brand + p {
+    margin-top: 14px;
+    color: #b9c6c0;
+    font-size: 14px;
+}
+
+.footer-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.footer-right a {
+    color: var(--white);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footer-right a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==================================================
+   RESPONSIVITET
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .menu-overlay,
+    .menu-panel {
+        transition: none;
+    }
+}
+
+@media (max-width: 950px) {
+
+    .brand-divider,
+    .brand-project {
+        display: none;
+    }
+}
+
+@media (max-width: 620px) {
+
+    .content-container {
+        width: calc(100% - 32px);
+    }
+
+    .site-header {
+        min-height: 78px;
+    }
+
+    .header-container {
+        width: calc(100% - 32px);
+    }
+
+    .kartverket-logo {
+        width: 140px;
+    }
+
+    .menu-button {
+        margin-left: 12px;
+    }
+
+    .menu-text {
+        display: none;
+    }
+
+    .menu-lines {
+        width: 32px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

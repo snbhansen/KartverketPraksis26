@@ -1,0 +1,196 @@
+/* ==================================================
+   STATUSSIDENE (status1.html og status2.html)
+
+   Felles stil ligger i css/global.css.
+================================================== */
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 75px 0 88px;
+    background: var(--green-light);
+}
+
+.hero-pattern {
+    position: absolute;
+    width: 780px;
+    height: 780px;
+    right: -210px;
+    top: -355px;
+    border: 2px solid rgba(0, 107, 60, 0.07);
+    border-radius: 50%;
+}
+
+.hero-pattern::before,
+.hero-pattern::after {
+    content: "";
+    position: absolute;
+    border: 2px solid rgba(0, 107, 60, 0.07);
+    border-radius: 50%;
+}
+
+.hero-pattern::before {
+    width: 575px;
+    height: 575px;
+    left: 100px;
+    top: 100px;
+}
+
+.hero-pattern::after {
+    width: 360px;
+    height: 360px;
+    left: 208px;
+    top: 208px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumb {
+    margin-bottom: 57px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #44534b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.breadcrumb a {
+    color: var(--green-dark);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.eyebrow {
+    margin-bottom: 15px;
+    color: var(--green-dark);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 820px;
+    margin-bottom: 34px;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 650;
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+}
+
+.hero-intro {
+    max-width: 710px;
+    margin-bottom: 38px;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+/* ==================================================
+   STATUS MAIN CONTENT (MINIMAL LAYOUT)
+================================================== */
+
+.status-main {
+    padding: 110px 0;
+    background: var(--white);
+}
+
+.status-container {
+    width: min(860px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.status-section {
+    margin-bottom: 48px;
+}
+
+.status-section h2 {
+    font-size: 36px;
+    font-weight: 650;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-section p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.status-section p em {
+    font-style: italic;
+}
+
+.link-icon-container {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 6px;
+}
+
+.link-icon {
+    width: 18px;
+    height: 18px;
+    color: #444444;
+}
+
+.status-list {
+    list-style-type: square;
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.status-list li {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.status-list li::marker {
+    color: #222222;
+}
+
+
+/* ==================================================
+   RESPONSIVT DESIGN
+================================================== */
+
+@media (max-width: 768px) {
+
+
+    .hero {
+        padding: 50px 0 65px;
+    }
+
+    .hero h1 {
+        font-size: 47px;
+    }
+
+    .hero-intro {
+        font-size: 18px;
+    }
+
+    .status-section h2 {
+        font-size: 29px;
+    }
+
+    .status-main {
+        padding: 65px 0;
+    }
+
+
+}
