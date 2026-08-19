@@ -298,36 +298,47 @@ img {
     color: currentColor;
 }
 
-.menu-primary a {
+.menu-primary a,
+.status-menu-button {
+    width: 100%;
     padding: 15px 0;
     display: flex;
     align-items: center;
     gap: 20px;
+    border: 0;
     color: var(--text);
+    background: transparent;
+    font-family: inherit;
     font-size: 17px;
     font-weight: 700;
     text-decoration: none;
+    text-align: left;
+    cursor: pointer;
     transition: color 150ms ease;
 }
 
 .menu-primary a:hover,
-.menu-primary a[aria-current="page"] {
+.menu-primary a[aria-current="page"],
+.status-menu-button:hover,
+.status-menu-button[aria-expanded="true"] {
     color: var(--green-dark);
 }
 
-.menu-primary .icon {
+.menu-primary .icon,
+.status-menu-button .icon {
     flex-shrink: 0;
     width: 40px;
     height: 40px;
     color: var(--green-dark);
 }
 
-.menu-primary a > span {
+.menu-primary a > span,
+.status-menu-button > span {
     margin-right: auto;
 }
 
 .menu-secondary {
-    margin-top: 26px;
+    margin-top: 20px;
     border-top: 1px solid var(--border);
 }
 
@@ -355,6 +366,15 @@ img {
     transform: translateX(4px);
 }
 
+.status-menu-button:hover .status-chevron {
+    transform: none;
+}
+
+.status-menu-button[aria-expanded="true"] .status-chevron,
+.status-menu-button[aria-expanded="true"]:hover .status-chevron {
+    transform: rotate(90deg);
+}
+
 .menu-footer {
     margin-top: 32px;
 }
@@ -380,46 +400,23 @@ body.has-open-menu {
 ================================================== */
 
 .status-menu {
-    border-bottom: 1px solid var(--border);
-}
-
-.status-menu-button {
-    width: 100%;
-    padding: 16px 2px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-    border: 0;
-    color: var(--text);
-    background: transparent;
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: 700;
-    text-align: left;
-    cursor: pointer;
-    transition: color 150ms ease;
-}
-
-.status-menu-button:hover,
-.status-menu-button[aria-expanded="true"] {
-    color: var(--green-dark);
+    border-bottom: 0;
 }
 
 .status-chevron {
+    flex-shrink: 0;
+    width: 17px;
+    height: 17px;
+    color: var(--green-dark);
     transition: transform 150ms ease;
 }
 
-.status-menu-button[aria-expanded="true"] .status-chevron {
-    transform: rotate(90deg);
-}
-
 .status-submenu {
-    padding: 0 0 8px 20px;
+    padding: 0 0 8px 60px;
 }
 
 .status-submenu a {
-    padding: 12px 2px;
+    padding: 10px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;

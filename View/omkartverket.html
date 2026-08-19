@@ -224,12 +224,12 @@
             <div class="footer-right">
                 <a href="index.html" data-en="Home">Hjem</a>
                 <a href="oppgavebeskrivelse.html" data-en="Assignment description">Oppgavebeskrivelse</a>
-                <a href="prosjektdagbok.html" data-en="Project diary">Prosjektdagbok</a>
-                <a href="refleksjoner.html" data-en="Reflections">Refleksjon</a>
                 <a href="om-oss.html" data-en="About us">Om oss</a>
                 <a href="omkartverket.html" data-en="About Kartverket">Om Kartverket</a>
+                <a href="prosjektdagbok.html" data-en="Project diary">Prosjektdagbok</a>
                 <a href="status1.html">Status 1</a>
                 <a href="status2.html">Status 2</a>
+                <a href="refleksjoner.html" data-en="Reflections">Refleksjon</a>
             </div>
 
         </div>
@@ -250,6 +250,21 @@
         </button>
 
         <nav class="menu-primary" aria-label="Hovedsider">
+
+            <a href="index.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+
+                <span data-en="Home">Hjem</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
 
             <a href="oppgavebeskrivelse.html">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
@@ -299,20 +314,15 @@
                 </svg>
             </a>
 
-        </nav>
-
-        <nav class="menu-secondary" aria-label="Flere sider">
-
-            <a href="prosjektdagbok.html" data-en="Project diary">
-                Prosjektdagbok
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+            <a href="prosjektdagbok.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="m9 5 7 7-7 7"></path>
+                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+                    <path d="M8 7h8M8 11h8M8 15h5"></path>
                 </svg>
-            </a>
 
-            <a href="refleksjoner.html" data-en="Reflections">
-                Refleksjon
+                <span data-en="Project diary">Prosjektdagbok</span>
+
                 <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="m9 5 7 7-7 7"></path>
@@ -322,7 +332,12 @@
             <div class="status-menu">
 
                 <button class="status-menu-button" type="button" aria-expanded="false">
-                    <span>Status</span>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 20V10M12 20V4M6 20v-6"></path>
+                    </svg>
+
+                    <span data-en="Status">Status</span>
 
                     <svg class="chevron status-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -354,21 +369,24 @@
 
             </div>
 
-            <a href="oppgavebeskrivelse.html#arbeidsoppgaver" data-en="Tasks">
-                Arbeidsoppgaver
+            <a href="refleksjoner.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.5 1.5 3.5.8.8 1.3 1.5 1.5 2.5"></path>
+                    <path d="M9 18h6M10 22h4"></path>
+                </svg>
+
+                <span data-en="Reflections">Refleksjon</span>
+
                 <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="m9 5 7 7-7 7"></path>
                 </svg>
             </a>
 
-            <a href="om-oss.html#veiledning" data-en="Supervisors and partners">
-                Veiledere og partnere
-                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="m9 5 7 7-7 7"></path>
-                </svg>
-            </a>
+        </nav>
+
+        <nav class="menu-secondary" aria-label="Eksterne lenker">
 
             <a href="https://www.kartverket.no/" class="is-highlighted" target="_blank"
                 rel="noopener noreferrer">
@@ -380,10 +398,6 @@
             </a>
 
         </nav>
-
-        <div class="menu-footer">
-            <a href="index.html" data-en="Home">Hjem</a>
-        </div>
 
     </div>
 
