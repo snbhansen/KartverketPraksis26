@@ -97,7 +97,19 @@ img {
     text-decoration: none;
 }
 
+.brand-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .kartverket-logo {
+    display: block;
+    width: 168px;
+    height: auto;
+}
+
+.uia-logo {
     display: block;
     width: 168px;
     height: auto;
