@@ -156,9 +156,14 @@
 .two-column {
     display: grid;
 
-    grid-template-columns: 220px minmax(0, 780px);
+    grid-template-columns: minmax(0, 1fr);
 
     gap: 90px;
+}
+
+.two-column > .section-content {
+    width: min(100%, 1040px);
+    margin: 0 auto;
 }
 
 .section-label {
