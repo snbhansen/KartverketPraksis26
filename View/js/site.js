@@ -213,3 +213,33 @@
         statusButton.setAttribute("aria-expanded", isOpen ? "false" : "true");
     });
 })();
+
+
+// ---------- DAGBOKSINNLEGG ----------
+(function () {
+    var toggles = document.querySelectorAll(".diary-toggle");
+
+    if (!toggles.length) {
+        return;
+    }
+
+    // Hver dag er en <button> som styrer sin egen tekstblokk.
+    // Knappen gir tastaturstøtte av seg selv, og aria-expanded
+    // forteller skjermlesere om dagen er åpen eller lukket.
+    Array.prototype.forEach.call(toggles, function (toggle) {
+        var body = document.getElementById(toggle.getAttribute("aria-controls"));
+
+        if (!body) {
+            return;
+        }
+
+        body.hidden = toggle.getAttribute("aria-expanded") !== "true";
+
+        toggle.addEventListener("click", function () {
+            var isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+            body.hidden = isOpen;
+            toggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
+        });
+    });
+})();
