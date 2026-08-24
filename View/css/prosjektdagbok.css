@@ -345,10 +345,10 @@
    PROSJEKTDAGBOK
 ================================================== */
 
-.diary-entry {
-    margin-top: 55px;
+/* Uke-gruppe: samler alle dagene i én kalenderuke. */
 
-    padding: 40px;
+.diary-week {
+    margin-top: 55px;
 
     background: var(--white);
 
@@ -359,43 +359,116 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
 }
 
-.diary-header {
-    padding-bottom: 28px;
+.diary-week-heading {
+    padding: 26px 40px;
 
     display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    gap: 6px 14px;
+}
+
+.diary-week-label {
+    color: var(--green-dark);
+
+    font-size: 21px;
+    font-weight: 700;
+
+    letter-spacing: -0.01em;
+}
+
+.diary-week-dates {
+    color: var(--text-secondary);
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* Dagsinnlegg: hver dag er en egen sammenleggbar rad. */
+
+.diary-list {
+    border-top: 1px solid var(--border);
+}
+
+.diary-entry + .diary-entry {
+    border-top: 1px solid var(--border);
+}
+
+.diary-heading {
+    margin: 0;
+
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.diary-toggle {
+    width: 100%;
+
+    padding: 24px 40px;
+
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-start;
 
-    gap: 30px;
+    gap: 24px;
 
-    border-bottom: 1px solid var(--border);
+    border: 0;
+
+    color: var(--text);
+    background: transparent;
+
+    font-family: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: color 150ms ease, background-color 150ms ease;
+}
+
+.diary-toggle:hover,
+.diary-toggle[aria-expanded="true"] {
+    color: var(--green-dark);
+    background: var(--green-lighter);
+}
+
+.diary-toggle:focus-visible {
+    outline: 2px solid var(--green-dark);
+    outline-offset: -2px;
+}
+
+.diary-summary {
+    min-width: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    gap: 4px 14px;
 }
 
 .diary-number {
-    display: block;
-
-    margin-bottom: 8px;
-
     color: var(--green);
 
     font-size: 13px;
     font-weight: 700;
 }
 
-.diary-header h3 {
-    font-size: 29px;
+.diary-title {
+    font-size: 22px;
     font-weight: 650;
 
-    line-height: 1.2;
+    line-height: 1.25;
 }
 
 .diary-date {
-    flex-shrink: 0;
-
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: baseline;
 
-    align-items: flex-end;
+    gap: 4px 10px;
 
     color: var(--text-secondary);
 
@@ -409,6 +482,27 @@
 
     font-size: 15px;
     font-weight: 650;
+}
+
+.diary-chevron {
+    flex-shrink: 0;
+
+    width: 20px;
+    height: 20px;
+
+    color: var(--green-dark);
+
+    transition: transform 150ms ease;
+}
+
+.diary-toggle[aria-expanded="true"] .diary-chevron {
+    transform: rotate(180deg);
+}
+
+.diary-body {
+    padding: 0 40px 32px;
+
+    border-top: 1px solid var(--border);
 }
 
 .diary-section {
@@ -617,8 +711,15 @@
         font-size: 25px;
     }
 
-    .diary-entry {
-        padding: 30px;
+    .diary-week-heading,
+    .diary-toggle {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .diary-body {
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
@@ -687,24 +788,38 @@
         gap: 15px;
     }
 
-    .diary-entry {
+    .diary-week {
         margin-top: 35px;
-
-        padding: 24px 20px;
     }
 
-    .diary-header {
-        flex-direction: column;
-
-        gap: 15px;
+    .diary-week-heading {
+        padding: 22px 20px;
     }
 
-    .diary-header h3 {
-        font-size: 25px;
+    .diary-week-label {
+        font-size: 19px;
+    }
+
+    .diary-toggle {
+        padding: 20px;
+
+        gap: 16px;
+    }
+
+    .diary-summary {
+        gap: 4px 10px;
+    }
+
+    .diary-title {
+        font-size: 20px;
     }
 
     .diary-date {
         align-items: flex-start;
+    }
+
+    .diary-body {
+        padding: 0 20px 26px;
     }
 
     .diary-section {
