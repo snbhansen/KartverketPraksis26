@@ -143,8 +143,9 @@
 .hero-links {
     margin-top: 42px;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 385px));
+    justify-content: center;
+    gap: 40px;
 }
 
 .hero-links .button {
