@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="no" data-title-en="The Norwegian Mapping Authority Internship 2026 | Internship project IS-302">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kartverket Praksis 2026 | Praksisprosjekt IS-302</title>
+
+    <meta name="description"
+        content="Forsiden til praksisprosjektet IS-302 hos Kartverket høsten 2026. Studentteam fra Universitetet i Agder som utvikler en AI-drevet økonomiveileder.">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-container">
+
+            <a href="index.html" class="brand" aria-label="Gå til forsiden">
+                <img src="../assets/images/kartverket-logo.svg" alt="Kartverket" class="kartverket-logo">
+                <span class="brand-divider" aria-hidden="true"></span>
+                <img src="../assets/images/uia-logo.svg" alt="Universitetet i Agder" class="uia-logo">
+                <span class="brand-project" data-en="Internship 2026">Praksis 2026</span>
+            </a>
+
+            <div class="lang-switch">
+                <button class="lang-button" type="button" aria-expanded="false" aria-controls="sprakmeny">
+                    <span>Language</span>
+
+                    <svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="m5 9 7 7 7-7"></path>
+                    </svg>
+                </button>
+
+                <div class="lang-menu" id="sprakmeny" hidden>
+                    <button type="button" data-lang="no">Norsk</button>
+                    <button type="button" data-lang="en">English</button>
+                </div>
+            </div>
+
+            <button class="menu-button" type="button" aria-label="Åpne meny" aria-expanded="false"
+                aria-controls="hovedmeny">
+                <span class="menu-text" data-en="MENU">MENY</span>
+
+                <span class="menu-lines" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-banner">
+
+                <!-- Dekorativt bannerbilde: norsk kyst- og fjellandskap -->
+                <svg class="hero-image" viewBox="0 0 1440 560" preserveAspectRatio="xMidYMid slice"
+                    aria-hidden="true">
+                    <defs>
+                        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#a9d2e6"></stop>
+                            <stop offset="1" stop-color="#e6f1ee"></stop>
+                        </linearGradient>
+
+                        <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#4e93ac"></stop>
+                            <stop offset="1" stop-color="#2b6480"></stop>
+                        </linearGradient>
+
+                        <linearGradient id="scrim" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0" stop-color="#0c2b21" stop-opacity="0.8"></stop>
+                            <stop offset="0.55" stop-color="#0c2b21" stop-opacity="0.3"></stop>
+                            <stop offset="1" stop-color="#0c2b21" stop-opacity="0"></stop>
+                        </linearGradient>
+                    </defs>
+
+                    <rect width="1440" height="560" fill="url(#sky)"></rect>
+                    <circle cx="1210" cy="118" r="56" fill="#ffffff" opacity="0.5"></circle>
+
+                    <path
+                        d="M0 300 L150 208 L262 268 L392 172 L520 274 L644 212 L764 292 L900 198 L1042 280 L1180 204 L1322 278 L1440 222 L1440 348 L0 348 Z"
+                        fill="#8fb4b8" opacity="0.55"></path>
+
+                    <path
+                        d="M0 332 L122 266 L252 322 L382 248 L502 318 L622 266 L782 330 L922 260 L1062 324 L1202 266 L1342 326 L1440 288 L1440 378 L0 378 Z"
+                        fill="#5c8b78"></path>
+
+                    <path
+                        d="M0 378 L182 324 L342 368 L522 330 L702 374 L882 336 L1082 376 L1262 340 L1440 380 L1440 404 L0 404 Z"
+                        fill="#336854"></path>
+
+                    <rect y="404" width="1440" height="156" fill="url(#sea)"></rect>
+
+                    <g fill="#ffffff" opacity="0.13">
+                        <rect x="90" y="432" width="240" height="5" rx="2.5"></rect>
+                        <rect x="420" y="452" width="180" height="5" rx="2.5"></rect>
+                        <rect x="250" y="486" width="300" height="5" rx="2.5"></rect>
+                        <rect x="760" y="440" width="210" height="5" rx="2.5"></rect>
+                        <rect x="980" y="474" width="260" height="5" rx="2.5"></rect>
+                        <rect x="640" y="516" width="330" height="5" rx="2.5"></rect>
+                    </g>
+
+                    <!-- Sjøhus -->
+                    <g>
+                        <rect x="1084" y="368" width="46" height="32" fill="#a8362c"></rect>
+                        <path d="M1078 368 L1107 348 L1136 368 Z" fill="#8d2b23"></path>
+                        <rect x="1148" y="376" width="34" height="24" fill="#b84135"></rect>
+                        <path d="M1143 376 L1165 361 L1187 376 Z" fill="#8d2b23"></path>
+                    </g>
+
+                    <rect width="1440" height="560" fill="url(#scrim)"></rect>
+                </svg>
+
+                <div class="content-container hero-content">
+
+                    <p class="eyebrow" data-en="Internship project IS-302 · University of Agder">
+                        Praksisprosjekt IS-302 · Universitetet i Agder</p>
+
+                    <h1 data-en="Artificial intelligence internship at The Norwegian Mapping Authority">
+                        Kunstig intelligens i praksis hos Kartverket
+                    </h1>
+
+                    <p class="hero-intro"
+                        data-en="We are a group of bachelor students developing an AI-powered financial advisor tool for The Norwegian Mapping Authority during the autumn of 2026.">
+                        Vi er en gruppe bachelorstudenter som høsten 2026 utvikler et
+                        AI-drevet økonomiveileder-verktøy for Kartverket.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="hero-lower">
+                <div class="content-container">
+
+                    <div class="hero-cards">
+
+                        <article class="hero-card">
+                            <a href="oppgavebeskrivelse.html" class="hero-card-title">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path>
+                                    <path d="M14 3v5h5"></path>
+                                    <path d="M9 13h6M9 17h6"></path>
+                                </svg>
+
+                                <span data-en="The assignment">Oppgaven</span>
+
+                                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="m9 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+
+                            <nav class="hero-card-links" aria-label="Snarveier i oppgavebeskrivelsen">
+                                <a href="oppgavebeskrivelse.html#prosjektet" data-en="The project">
+                                    Prosjektet
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="oppgavebeskrivelse.html#arbeidsoppgaver" data-en="Tasks">
+                                    Arbeidsoppgaver
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="oppgavebeskrivelse.html#praksis" data-en="Internship at The Norwegian Mapping Authority">
+                                    Praksis hos Kartverket
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="oppgavebeskrivelse.html#studentgruppen" data-en="The student group">
+                                    Studentgruppen
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </nav>
+                        </article>
+
+                        <article class="hero-card">
+                            <a href="om-oss.html" class="hero-card-title">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M16 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9.5" cy="7.2" r="3.2"></circle>
+                                    <path d="M21 20v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M15.6 4.4a3.2 3.2 0 0 1 0 5.6"></path>
+                                </svg>
+
+                                <span data-en="About us">Om oss</span>
+
+                                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="m9 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+
+                            <nav class="hero-card-links" aria-label="Snarveier om studentteamet">
+                                <a href="om-oss.html#gruppen" data-en="Who are we?">
+                                    Hvem er vi?
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="om-oss.html#metodikk" data-en="Working methods">
+                                    Arbeidsmetodikk
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="om-oss.html#veiledning" data-en="Supervisors and partners">
+                                    Veiledere og partnere
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="om-oss.html#ambisjoner" data-en="Our ambitions">
+                                    Våre ambisjoner
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </nav>
+                        </article>
+
+                        <article class="hero-card">
+                            <a href="omkartverket.html" class="hero-card-title">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4z"></path>
+                                    <path d="M9 4v13M15 6.5v13"></path>
+                                </svg>
+
+                                <span data-en="About The Norwegian Mapping Authority">Om Kartverket</span>
+
+                                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="m9 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+
+                            <nav class="hero-card-links" aria-label="Snarveier om Kartverket">
+                                <a href="omkartverket.html#hvem" data-en="Who is The Norwegian Mapping Authority?">
+                                    Hvem er Kartverket?
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="omkartverket.html#fagomrader" data-en="Four areas of expertise">
+                                    Fire fagområder
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="omkartverket.html#informasjon-i-bruk" data-en="Information in use">
+                                    Informasjon i bruk
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+
+                                <a href="omkartverket.html#kontakt" data-en="Sources and further reading">
+                                    Kilde og videre lesing
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path d="m9 5 7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </nav>
+                        </article>
+
+                    </div>
+
+                    <div class="hero-links">
+
+                        <a href="https://www.kartverket.no/" class="button" target="_blank"
+                            rel="noopener noreferrer">
+                            <span>Kartverket</span>
+
+                            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <circle cx="12" cy="12" r="10.6"></circle>
+                                <path d="M7.9 12h8.2"></path>
+                                <path d="M12.6 8.5 16.1 12l-3.5 3.5"></path>
+                            </svg>
+                        </a>
+
+                        <a href="https://www.uia.no/" class="button" target="_blank"
+                            rel="noopener noreferrer">
+                            <span data-en="University of Agder">Universitetet i Agder</span>
+
+                            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"
+                                aria-hidden="true">
+                                <circle cx="12" cy="12" r="10.6"></circle>
+                                <path d="M7.9 12h8.2"></path>
+                                <path d="M12.6 8.5 16.1 12l-3.5 3.5"></path>
+                            </svg>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- CTA-BANNER -->
+        <section class="cta-banner">
+            <div class="content-container">
+
+                <a href="oppgavebeskrivelse.html" class="cta-card">
+
+                    <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M19.4 14.9C20.2 16.4 21 17 21 17H3s3-2 3-9c0-3.3 2.7-6 6-6 .7 0 1.3.1 1.9.3"></path>
+                        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                        <circle cx="18" cy="8" r="3" fill="currentColor" stroke="none"></circle>
+                    </svg>
+
+                    <p data-en="Curious about what we are actually going to build during the internship?">Vil du vite hva vi faktisk skal bygge i løpet av praksisperioden?</p>
+
+                    <span class="cta-link">
+                        <span data-en="Read more about the project">Les mer om prosjektet</span>
+
+                        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10.6"></circle>
+                            <path d="M7.9 12h8.2"></path>
+                            <path d="M12.6 8.5 16.1 12l-3.5 3.5"></path>
+                        </svg>
+                    </span>
+
+                </a>
+
+            </div>
+        </section>
+
+        <!-- HIGHLIGHT -->
+        <section class="highlight-section">
+            <div class="content-container">
+
+                <div class="highlight-box">
+
+                    <div class="highlight-number">
+                        AI
+                    </div>
+
+                    <div class="highlight-content">
+                        <p class="small-heading" data-en="The main goal">Hovedmålet</p>
+
+                        <h2 data-en="Making financial knowledge easier to access">
+                            Gjøre økonomisk kunnskap lettere tilgjengelig
+                        </h2>
+
+                        <p data-en="The financial adviser will help managers and employees with common financial questions, and make it easier for them to find the right information without the finance department having to answer the same things manually again and again.">
+                            Økonomiveilederen skal hjelpe ledere og ansatte med vanlige økonomiske
+                            spørsmål, og gjøre det enklere å finne riktig informasjon uten at
+                            økonomiavdelingen må svare manuelt på det samme flere ganger.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SEKSJON 02: NØKKELTALL -->
+        <section class="section section-soft">
+            <div class="content-container two-column">
+
+                <div class="section-label">
+                    <span>01</span>
+                    <p data-en="Briefly explained">Kort fortalt</p>
+                </div>
+
+                <div class="section-content">
+
+                    <h2 data-en="The internship project in numbers">Praksisprosjektet i tall</h2>
+
+                    <p class="lead" data-en="A real assignment in an organisation of great public value, carried out as part of the IS-302 course at the University of Agder.">
+                        Et reelt oppdrag i en virksomhet med stor samfunnsnytte, gjennomført
+                        som en del av emnet IS-302 ved Universitetet i Agder.
+                    </p>
+
+                    <div class="fact-grid">
+
+                        <div class="fact">
+                            <strong>2026</strong>
+                            <span data-en="Internship period, autumn">Praksisperiode, høst</span>
+                        </div>
+
+                        <div class="fact">
+                            <strong>5</strong>
+                            <span data-en="Students in the team">Studenter i teamet</span>
+                        </div>
+
+                        <div class="fact">
+                            <strong>800</strong>
+                            <span data-en="Employees at The Norwegian Mapping Authority">Ansatte i Kartverket</span>
+                        </div>
+
+                        <div class="fact">
+                            <strong>4</strong>
+                            <span data-en="Areas of expertise to understand">Fagområder å forstå</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 04: FAGOMRÅDER -->
+        <section class="section dark-section">
+            <div class="content-container two-column">
+
+                <div class="section-label dark-label">
+                    <span>02</span>
+                    <p data-en="Interdisciplinary">Tverrfaglig</p>
+                </div>
+
+                <div class="section-content">
+
+                    <h2 data-en="At the intersection of many disciplines">I skjæringspunktet mellom mange fag</h2>
+
+                    <p class="lead" data-en="We work closely with experienced professionals across areas of expertise at The Norwegian Mapping Authority.">
+                        Vi jobber tett sammen med erfarne fagpersoner på tvers av fagområder
+                        i Kartverket.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- AVSLUTNING -->
+        <section class="why-section">
+            <div class="content-container">
+
+                <p class="eyebrow" data-en="Why did we choose The Norwegian Mapping Authority?">Hvorfor valgte vi Kartverket?</p>
+
+                <h2 data-en="Technology, data and public value.">
+                    Teknologi, data og samfunnsnytte.
+                </h2>
+
+                <p data-en="The Norwegian Mapping Authority develops and manages data and services used every single day by the public sector, businesses and residents across Norway. The data matters for emergency preparedness, climate, property, transport and land management, among other things.">
+                    Kartverket utvikler og forvalter data og tjenester som brukes hver eneste dag
+                    av offentlig sektor, næringsliv og innbyggere over hele Norge. Dataene er
+                    viktige innen blant annet beredskap, klima, eiendom, samferdsel og
+                    arealforvaltning.
+                </p>
+
+                <p data-en="Through the internship project we get to work at the intersection of technology, data, finance and public value.">
+                    Gjennom praksisprosjektet får vi arbeide i skjæringspunktet mellom teknologi,
+                    data, økonomi og samfunnsnytte.
+                </p>
+
+                <a href="om-oss.html" class="back-link">
+                    <span data-en="Get to know the student team">Bli kjent med studentteamet</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="content-container footer-content">
+
+            <div>
+                <p class="footer-brand">Kartverket</p>
+                <p data-en="Internship project IS-302 · 2026">Praksisprosjekt IS-302 · 2026</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- MENYPANEL -->
+    <div class="menu-overlay" hidden></div>
+
+    <div class="menu-panel" id="hovedmeny" role="dialog" aria-modal="true" aria-label="Hovedmeny" hidden>
+
+        <button class="menu-close" type="button" aria-label="Lukk meny">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
+                stroke-linecap="round" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18"></path>
+            </svg>
+        </button>
+
+        <nav class="menu-primary" aria-label="Hovedsider">
+
+            <a href="index.html" aria-current="page">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+
+                <span data-en="Home">Hjem</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="oppgavebeskrivelse.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path>
+                    <path d="M14 3v5h5"></path>
+                    <path d="M9 13h6M9 17h6"></path>
+                </svg>
+
+                <span data-en="The assignment">Oppgaven</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="om-oss.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M16 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9.5" cy="7.2" r="3.2"></circle>
+                    <path d="M21 20v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M15.6 4.4a3.2 3.2 0 0 1 0 5.6"></path>
+                </svg>
+
+                <span data-en="About us">Om oss</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="omkartverket.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4z"></path>
+                    <path d="M9 4v13M15 6.5v13"></path>
+                </svg>
+
+                <span data-en="About Kartverket">Om Kartverket</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="prosjektdagbok.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+                    <path d="M8 7h8M8 11h8M8 15h5"></path>
+                </svg>
+
+                <span data-en="Project diary">Prosjektdagbok</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <div class="status-menu">
+
+                <button class="status-menu-button" type="button" aria-expanded="false">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 20V10M12 20V4M6 20v-6"></path>
+                    </svg>
+
+                    <span data-en="Status">Status</span>
+
+                    <svg class="chevron status-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="m9 5 7 7-7 7"></path>
+                    </svg>
+                </button>
+
+                <div class="status-submenu" hidden>
+
+                    <a href="status1.html">
+                        <span>Status 1</span>
+
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="m9 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
+
+                    <a href="status2.html">
+                        <span>Status 2</span>
+
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="m9 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <a href="refleksjoner.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.5 1.5 3.5.8.8 1.3 1.5 1.5 2.5"></path>
+                    <path d="M9 18h6M10 22h4"></path>
+                </svg>
+
+                <span data-en="Reflections">Refleksjon</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+        </nav>
+
+        <nav class="menu-secondary" aria-label="Eksterne lenker">
+
+            <a href="https://www.kartverket.no/" class="is-highlighted" target="_blank"
+                rel="noopener noreferrer">
+                kartverket.no
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <script src="js/site.js"></script>
+
+</body>
+
+</html>

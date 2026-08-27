@@ -156,9 +156,14 @@
 .two-column {
     display: grid;
 
-    grid-template-columns: 220px minmax(0, 780px);
+    grid-template-columns: minmax(0, 1fr);
 
     gap: 90px;
+}
+
+.two-column > .section-content {
+    width: min(100%, 1040px);
+    margin: 0 auto;
 }
 
 .section-label {
@@ -222,7 +227,52 @@
 
 
 /* ==================================================
-   HOVEDMÅL
+   FORMÅL / HENSIKT
+================================================== */
+
+.purpose-list {
+    margin-top: 45px;
+
+    border-top: 1px solid var(--border);
+}
+
+.purpose-item {
+    padding: 27px 0;
+
+    display: grid;
+
+    grid-template-columns: 55px minmax(0, 1fr);
+
+    gap: 20px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.purpose-item > span {
+    color: var(--green);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.purpose-item h3 {
+    margin-bottom: 7px;
+
+    font-size: 20px;
+    font-weight: 650;
+}
+
+.purpose-item p {
+    color: var(--text-secondary);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* ==================================================
+   HIGHLIGHT / REFLECTIVE PRACTICE
 ================================================== */
 
 .highlight-section {
@@ -256,7 +306,7 @@
     color: var(--white);
     background: var(--green-dark);
 
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 700;
 }
 
@@ -292,163 +342,241 @@
 
 
 /* ==================================================
-   ARBEIDSOPPGAVER
+   PROSJEKTDAGBOK
 ================================================== */
 
-.task-list {
-    margin-top: 45px;
+/* Uke-gruppe: samler alle dagene i én kalenderuke. */
+
+.diary-week {
+    margin-top: 55px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-top: 4px solid var(--green);
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.diary-week-heading {
+    padding: 26px 40px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    gap: 6px 14px;
+}
+
+.diary-week-label {
+    color: var(--green-dark);
+
+    font-size: 21px;
+    font-weight: 700;
+
+    letter-spacing: -0.01em;
+}
+
+.diary-week-dates {
+    color: var(--text-secondary);
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* Dagsinnlegg: hver dag er en egen sammenleggbar rad. */
+
+.diary-list {
+    border-top: 1px solid var(--border);
+}
+
+.diary-entry + .diary-entry {
+    border-top: 1px solid var(--border);
+}
+
+.diary-heading {
+    margin: 0;
+
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.diary-toggle {
+    width: 100%;
+
+    padding: 24px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    border: 0;
+
+    color: var(--text);
+    background: transparent;
+
+    font-family: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: color 150ms ease, background-color 150ms ease;
+}
+
+.diary-toggle:hover,
+.diary-toggle[aria-expanded="true"] {
+    color: var(--green-dark);
+    background: var(--green-lighter);
+}
+
+.diary-toggle:focus-visible {
+    outline: 2px solid var(--green-dark);
+    outline-offset: -2px;
+}
+
+.diary-summary {
+    min-width: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    gap: 4px 14px;
+}
+
+.diary-number {
+    color: var(--green);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.diary-title {
+    font-size: 22px;
+    font-weight: 650;
+
+    line-height: 1.25;
+}
+
+.diary-date {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    gap: 4px 10px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.diary-date strong {
+    color: var(--green-dark);
+
+    font-size: 15px;
+    font-weight: 650;
+}
+
+.diary-chevron {
+    flex-shrink: 0;
+
+    width: 20px;
+    height: 20px;
+
+    color: var(--green-dark);
+
+    transition: transform 150ms ease;
+}
+
+.diary-toggle[aria-expanded="true"] .diary-chevron {
+    transform: rotate(180deg);
+}
+
+.diary-body {
+    padding: 0 40px 32px;
 
     border-top: 1px solid var(--border);
 }
 
-.task-item {
-    padding: 29px 0;
-
-    display: grid;
-
-    grid-template-columns: 70px minmax(0, 1fr);
-
-    gap: 25px;
+.diary-section {
+    padding: 25px 0;
 
     border-bottom: 1px solid var(--border);
 }
 
-.task-number {
-    color: var(--green);
+.diary-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--green-dark);
 
     font-size: 13px;
     font-weight: 700;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
 }
 
-.task-item h3 {
-    margin-bottom: 7px;
-
-    font-size: 20px;
-    font-weight: 650;
-}
-
-.task-item p {
-    max-width: 650px;
-
+.diary-section p {
     color: var(--text-secondary);
 
     font-size: 16px;
 
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
+.diary-note {
+    margin-top: 25px;
 
-/* ==================================================
-   KORT
-================================================== */
+    padding: 20px 22px;
 
-.card-grid {
-    margin-top: 50px;
+    background: var(--green-lighter);
 
-    display: grid;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 20px;
+    border-left: 3px solid var(--green);
 }
 
-.info-card {
-    min-height: 245px;
-
-    padding: 30px;
-
-    border: 1px solid var(--border);
-
-    transition:
-        transform 160ms ease,
-        border-color 160ms ease,
-        box-shadow 160ms ease;
-}
-
-.info-card:hover {
-    transform: translateY(-3px);
-
-    border-color: var(--green);
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-}
-
-.card-number {
+.diary-note span {
     display: block;
 
-    margin-bottom: 44px;
+    margin-bottom: 5px;
 
-    color: var(--green);
+    color: var(--green-dark);
 
     font-size: 13px;
     font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.07em;
 }
 
-.info-card h3 {
-    margin-bottom: 11px;
-
-    font-size: 20px;
-    font-weight: 650;
-}
-
-.info-card p {
+.diary-note p {
     color: var(--text-secondary);
+
+    font-size: 15px;
 
     line-height: 1.65;
 }
 
 
 /* ==================================================
-   MØRK SEKSJON
+   REFLEKSJON
 ================================================== */
 
-.dark-section {
-    color: var(--white);
-    background: var(--dark);
-}
-
-.dark-label {
-    border-color: #84c99a;
-}
-
-.dark-label span,
-.dark-label p {
-    color: #bde6c9;
-}
-
-.dark-section .lead {
-    color: #e0ebe4;
-}
-
-.pill-list {
-    margin-top: 45px;
-
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 12px;
-}
-
-.pill-list span {
-    padding: 11px 18px;
-
-    border: 1px solid rgba(255, 255, 255, 0.35);
-
-    border-radius: 100px;
-
-    font-size: 15px;
-}
-
-
-/* ==================================================
-   STUDENTGRUPPEN
-================================================== */
-
-.check-list {
+.reflection-list {
     margin-top: 45px;
 }
 
-.check-item {
+.reflection-item {
     padding: 22px 0;
 
     display: flex;
@@ -459,11 +587,11 @@
     border-bottom: 1px solid var(--border);
 }
 
-.check-item:first-child {
+.reflection-item:first-child {
     border-top: 1px solid var(--border);
 }
 
-.check-item span {
+.reflection-item > span {
     flex-shrink: 0;
 
     color: var(--green);
@@ -471,7 +599,7 @@
     font-size: 24px;
 }
 
-.check-item p {
+.reflection-item p {
     font-size: 17px;
 
     line-height: 1.65;
@@ -479,7 +607,7 @@
 
 
 /* ==================================================
-   HVORFOR KARTVERKET
+   AVSLUTNING
 ================================================== */
 
 .why-section {
@@ -568,8 +696,8 @@
         padding: 80px 0;
     }
 
-    .card-grid {
-        grid-template-columns: 1fr;
+    .highlight-section {
+        padding-bottom: 80px;
     }
 
     .highlight-box {
@@ -580,9 +708,19 @@
         width: 90px;
         height: 90px;
 
-        font-size: 27px;
+        font-size: 25px;
     }
 
+    .diary-week-heading,
+    .diary-toggle {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .diary-body {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
 
 
@@ -644,12 +782,60 @@
         font-size: 29px;
     }
 
-    .task-item {
-        grid-template-columns: 45px minmax(0, 1fr);
+    .purpose-item {
+        grid-template-columns: 40px minmax(0, 1fr);
+
+        gap: 15px;
     }
 
-    .info-card {
-        min-height: auto;
+    .diary-week {
+        margin-top: 35px;
+    }
+
+    .diary-week-heading {
+        padding: 22px 20px;
+    }
+
+    .diary-week-label {
+        font-size: 19px;
+    }
+
+    .diary-toggle {
+        padding: 20px;
+
+        gap: 16px;
+    }
+
+    .diary-summary {
+        gap: 4px 10px;
+    }
+
+    .diary-title {
+        font-size: 20px;
+    }
+
+    .diary-date {
+        align-items: flex-start;
+    }
+
+    .diary-body {
+        padding: 0 20px 26px;
+    }
+
+    .diary-section {
+        padding: 22px 0;
+    }
+
+    .diary-section p {
+        font-size: 15px;
+    }
+
+    .reflection-item {
+        gap: 15px;
+    }
+
+    .reflection-item p {
+        font-size: 16px;
     }
 
     .why-section {
@@ -659,7 +845,6 @@
     .why-section h2 {
         font-size: 44px;
     }
-
 
 
 }

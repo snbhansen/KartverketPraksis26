@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="no" data-title-en="Assignment description | Kartverket Internship">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,7 @@
         content="Praksisprosjekt IS-302: Utvikling av en AI-drevet økonomiveileder for Kartverket."
     >
 
+    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/oppgavebeskrivelse.css">
 </head>
 
@@ -21,37 +22,31 @@
         <div class="header-container">
 
             <a href="index.html" class="brand" aria-label="Gå til forsiden">
-                <img
-                    src="../assets/images/kartverket-logo.svg"
-                    alt="Kartverket"
-                    class="kartverket-logo"
-                >
-
-                <span class="brand-divider"></span>
-                <span class="brand-project">Praksis 2026</span>
+                <img src="../assets/images/kartverket-logo.svg" alt="Kartverket" class="kartverket-logo">
+                <img src="../assets/images/uia-logo.svg" alt="Universitetet i Agder" class="uia-logo">
+                <span class="brand-divider" aria-hidden="true"></span>
+                <span class="brand-project" data-en="Internship 2026">Praksis 2026</span>
             </a>
 
-            <nav class="desktop-nav" aria-label="Hovedmeny">
-                <a href="index.html">Hjem</a>
+            <div class="lang-switch">
+                <button class="lang-button" type="button" aria-expanded="false" aria-controls="sprakmeny">
+                    <span>Language</span>
 
-                <a
-                    href="oppgavebeskrivelse.html"
-                    class="active"
-                    aria-current="page"
-                >
-                    Oppgavebeskrivelse
-                </a>
+                    <svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="m5 9 7 7 7-7"></path>
+                    </svg>
+                </button>
 
-                <a href="#">Om oss</a>
-                <a href="#">Refleksjon</a>
-            </nav>
+                <div class="lang-menu" id="sprakmeny" hidden>
+                    <button type="button" data-lang="no">Norsk</button>
+                    <button type="button" data-lang="en">English</button>
+                </div>
+            </div>
 
-            <button
-                class="menu-button"
-                type="button"
-                aria-label="Åpne meny"
-            >
-                <span class="menu-text">MENY</span>
+            <button class="menu-button" type="button" aria-label="Åpne meny" aria-expanded="false"
+                aria-controls="hovedmeny">
+                <span class="menu-text" data-en="MENU">MENY</span>
 
                 <span class="menu-lines" aria-hidden="true">
                     <span></span>
@@ -74,29 +69,29 @@
             <div class="content-container hero-content">
 
                 <div class="breadcrumb">
-                    <a href="index.html">Praksis 2026</a>
+                    <a href="index.html" data-en="Internship 2026">Praksis 2026</a>
                     <span aria-hidden="true">←</span>
-                    <span>Oppgavebeskrivelse</span>
+                    <span data-en="Assignment description">Oppgavebeskrivelse</span>
                 </div>
 
-                <p class="eyebrow">Praksisprosjekt IS-302</p>
+                <p class="eyebrow" data-en="Internship project IS-302">Praksisprosjekt IS-302</p>
 
-                <h1>
-                    AI-drevet<br>
-                    økonomiveileder
+                <h1 data-en="AI-powered financial adviser">
+                    AI-drevet økonomiveileder
                 </h1>
 
-                <p class="hero-intro">
+                <p class="hero-intro"
+                    data-en="We are developing an AI-based solution that makes financial guidance simpler, faster and more accessible for managers and employees at Kartverket.">
                     Vi skal utvikle en AI-basert løsning som gjør økonomisk
                     veiledning enklere, raskere og mer tilgjengelig for
                     ledere og ansatte i Kartverket.
                 </p>
 
                 <div class="hero-tags">
-                    <span>Kunstig intelligens</span>
-                    <span>Økonomi</span>
-                    <span>Teknologi</span>
-                    <span>Samfunnsnytte</span>
+                    <span data-en="Artificial intelligence">Kunstig intelligens</span>
+                    <span data-en="Finance">Økonomi</span>
+                    <span data-en="Technology">Teknologi</span>
+                    <span data-en="Public value">Samfunnsnytte</span>
                 </div>
 
             </div>
@@ -104,26 +99,26 @@
 
 
         <!-- INTRO -->
-        <section class="section">
+        <section class="section" id="prosjektet">
             <div class="content-container two-column">
 
                 <div class="section-label">
                     <span>01</span>
-                    <p>Prosjektet</p>
+                    <p data-en="The project">Prosjektet</p>
                 </div>
 
                 <div class="section-content">
 
-                    <h2>
+                    <h2 data-en="A solution that will actually be put to use">
                         En løsning som faktisk skal tas i bruk
                     </h2>
 
-                    <p class="lead">
+                    <p class="lead" data-en="How can artificial intelligence make financial guidance simpler, faster and more accessible?">
                         Hvordan kan kunstig intelligens gjøre økonomisk
                         veiledning enklere, raskere og mer tilgjengelig?
                     </p>
 
-                    <p>
+                    <p data-en="In the internship project we will develop an AI-based financial adviser for The Norwegian Mapping Authority. The solution will help managers and employees with everything from practical questions about finances and internal routines to better insight into their own department&apos;s financial status.">
                         I praksisprosjektet skal vi utvikle en AI-basert
                         økonomiveileder for Kartverket. Løsningen skal hjelpe
                         ledere og ansatte med alt fra praktiske spørsmål om
@@ -131,14 +126,14 @@
                         avdelings økonomiske status.
                     </p>
 
-                    <p>
+                    <p data-en="One of the goals is to relieve the finance staff of repetitive and simple questions, while giving employees faster access to relevant and understandable financial information.">
                         Målet er blant annet å avlaste økonomene for
                         repeterende og enkle spørsmål, samtidig som ansatte
                         får raskere tilgang til relevant og forståelig
                         økonomisk informasjon.
                     </p>
 
-                    <p>
+                    <p data-en="This is not a theoretical case. We are working with a real need in an organisation of around 800 employees, and the solution is being built with the aim of actually being used at Kartverket.">
                         Dette er ikke et teoretisk case. Vi arbeider med et
                         reelt behov i en organisasjon med rundt 800 ansatte,
                         og løsningen utvikles med mål om at den faktisk skal
@@ -161,13 +156,13 @@
                     </div>
 
                     <div class="highlight-content">
-                        <p class="small-heading">Hovedmålet</p>
+                        <p class="small-heading" data-en="The main goal">Hovedmålet</p>
 
-                        <h2>
+                        <h2 data-en="Making financial knowledge easier to access">
                             Gjøre økonomisk kunnskap lettere tilgjengelig
                         </h2>
 
-                        <p>
+                        <p data-en="The financial adviser will help employees with common financial questions and make it easier to find the right information, without the finance department having to answer the same questions manually again and again.">
                             Økonomiveilederen skal kunne hjelpe ansatte med
                             vanlige økonomiske spørsmål og gjøre det enklere
                             å finne riktig informasjon uten at økonomiavdelingen
@@ -181,25 +176,25 @@
 
 
         <!-- WHAT WE WILL DO -->
-        <section class="section section-soft">
+        <section class="section section-soft" id="arbeidsoppgaver">
             <div class="content-container two-column">
 
                 <div class="section-label">
                     <span>02</span>
-                    <p>Arbeidsoppgaver</p>
+                    <p data-en="Tasks">Arbeidsoppgaver</p>
                 </div>
 
                 <div class="section-content">
 
-                    <h2>Hva skal vi jobbe med?</h2>
+                    <h2 data-en="What will we work on?">Hva skal vi jobbe med?</h2>
 
                     <div class="task-list">
 
                         <article class="task-item">
                             <span class="task-number">01</span>
                             <div>
-                                <h3>Utforske AI</h3>
-                                <p>
+                                <h3 data-en="Exploring AI">Utforske AI</h3>
+                                <p data-en="Investigating how artificial intelligence can be used safely and usefully for financial guidance.">
                                     Undersøke hvordan kunstig intelligens kan
                                     brukes på en trygg og nyttig måte til
                                     økonomisk veiledning.
@@ -210,8 +205,8 @@
                         <article class="task-item">
                             <span class="task-number">02</span>
                             <div>
-                                <h3>Utvikle og teste</h3>
-                                <p>
+                                <h3 data-en="Building and testing">Utvikle og teste</h3>
+                                <p data-en="Developing solutions and testing how they work against concrete needs in the organisation.">
                                     Utvikle løsninger og teste hvordan de
                                     fungerer mot konkrete behov i organisasjonen.
                                 </p>
@@ -221,8 +216,8 @@
                         <article class="task-item">
                             <span class="task-number">03</span>
                             <div>
-                                <h3>Data og brukerbehov</h3>
-                                <p>
+                                <h3 data-en="Data and user needs">Data og brukerbehov</h3>
+                                <p data-en="Working with data, analysis and the needs of the people who will actually use the solution.">
                                     Jobbe med data, analyse og behovene til
                                     menneskene som faktisk skal bruke løsningen.
                                 </p>
@@ -232,8 +227,8 @@
                         <article class="task-item">
                             <span class="task-number">04</span>
                             <div>
-                                <h3>Tilgjengelig informasjon</h3>
-                                <p>
+                                <h3 data-en="Accessible information">Tilgjengelig informasjon</h3>
+                                <p data-en="Proposing ways for managers and employees to gain easier access to relevant financial information.">
                                     Lage forslag til hvordan ledere og ansatte
                                     kan få enklere tilgang til relevant
                                     økonomisk informasjon.
@@ -244,8 +239,8 @@
                         <article class="task-item">
                             <span class="task-number">05</span>
                             <div>
-                                <h3>Tverrfaglig samarbeid</h3>
-                                <p>
+                                <h3 data-en="Interdisciplinary collaboration">Tverrfaglig samarbeid</h3>
+                                <p data-en="Working closely with specialists in finance, technology and artificial intelligence.">
                                     Samarbeide tett med fagpersoner innen
                                     økonomi, teknologi og kunstig intelligens.
                                 </p>
@@ -260,21 +255,21 @@
 
 
         <!-- WHAT WE GET -->
-        <section class="section">
+        <section class="section" id="praksis">
             <div class="content-container two-column">
 
                 <div class="section-label">
                     <span>03</span>
-                    <p>Praksis hos Kartverket</p>
+                    <p data-en="Internship at The Norwegian Mapping Authority">Praksis hos Kartverket</p>
                 </div>
 
                 <div class="section-content">
 
-                    <h2>
+                    <h2 data-en="Technology that matters">
                         Teknologi som betyr noe
                     </h2>
 
-                    <p class="lead">
+                    <p class="lead" data-en="The project gives us the opportunity to work on real problems together with Kartverket&apos;s professional communities.">
                         Prosjektet gir oss muligheten til å jobbe med reelle
                         problemstillinger sammen med Kartverkets fagmiljøer.
                     </p>
@@ -283,8 +278,8 @@
 
                         <article class="info-card">
                             <div class="card-icon">01</div>
-                            <h3>Reelle problemstillinger</h3>
-                            <p>
+                            <h3 data-en="Real problems">Reelle problemstillinger</h3>
+                            <p data-en="We are working on an actual need in an organisation of great public value.">
                                 Vi jobber med et faktisk behov i en virksomhet
                                 med stor samfunnsnytte.
                             </p>
@@ -292,8 +287,8 @@
 
                         <article class="info-card">
                             <div class="card-icon">02</div>
-                            <h3>AI og dataplattformer</h3>
-                            <p>
+                            <h3 data-en="AI and data platforms">AI og dataplattformer</h3>
+                            <p data-en="We gain practical experience with artificial intelligence, data and modern technology.">
                                 Vi får praktisk erfaring med kunstig
                                 intelligens, data og moderne teknologi.
                             </p>
@@ -301,8 +296,8 @@
 
                         <article class="info-card">
                             <div class="card-icon">03</div>
-                            <h3>Produksjonsrettet løsning</h3>
-                            <p>
+                            <h3 data-en="A production-ready solution">Produksjonsrettet løsning</h3>
+                            <p data-en="The goal is not just a prototype, but to contribute to a solution that can actually be used.">
                                 Målet er ikke bare en prototype, men å bidra
                                 til en løsning som faktisk skal kunne brukes.
                             </p>
@@ -310,8 +305,8 @@
 
                         <article class="info-card">
                             <div class="card-icon">04</div>
-                            <h3>Offentlig sektor</h3>
-                            <p>
+                            <h3 data-en="The public sector">Offentlig sektor</h3>
+                            <p data-en="We gain insight into how technology can be used to solve challenges in the public sector.">
                                 Vi får innsikt i hvordan teknologi kan brukes
                                 til å løse utfordringer i offentlig sektor.
                             </p>
@@ -330,27 +325,27 @@
 
                 <div class="section-label dark-label">
                     <span>04</span>
-                    <p>Samarbeid</p>
+                    <p data-en="Collaboration">Samarbeid</p>
                 </div>
 
                 <div class="section-content">
 
-                    <h2>
+                    <h2 data-en="An interdisciplinary internship project">
                         Et tverrfaglig praksisprosjekt
                     </h2>
 
-                    <p class="lead">
+                    <p class="lead" data-en="We will work closely with experienced professionals across different areas of expertise at Kartverket.">
                         Vi skal jobbe tett sammen med erfarne
                         fagpersoner på tvers av forskjellige fagområder i Kartverket.
                     </p>
 
                     <div class="pill-list">
-                        <span>Økonomi</span>
-                        <span>Utvikling</span>
-                        <span>Kunstig intelligens</span>
+                        <span data-en="Finance">Økonomi</span>
+                        <span data-en="Development">Utvikling</span>
+                        <span data-en="Artificial intelligence">Kunstig intelligens</span>
                         <span>Data</span>
-                        <span>Brukerbehov</span>
-                        <span>Innovasjon</span>
+                        <span data-en="User needs">Brukerbehov</span>
+                        <span data-en="Innovation">Innovasjon</span>
                     </div>
 
                 </div>
@@ -359,30 +354,30 @@
 
 
         <!-- WHO -->
-        <section class="section">
+        <section class="section" id="studentgruppen">
             <div class="content-container two-column">
 
                 <div class="section-label">
                     <span>05</span>
-                    <p>Studentgruppen</p>
+                    <p data-en="The student group">Studentgruppen</p>
                 </div>
 
                 <div class="section-content">
 
-                    <h2>Hva vi tror prosjektet krever av oss?</h2>
+                    <h2 data-en="What we think the project requires of us">Hva vi tror prosjektet krever av oss?</h2>
 
                     <div class="check-list">
 
                         <div class="check-item">
                             <span>→</span>
-                            <p>
+                            <p data-en="An interest in technology, development and new solutions">
                                 Interesse for teknologi, utvikling og nye løsninger
                             </p>
                         </div>
 
                         <div class="check-item">
                             <span>→</span>
-                            <p>
+                            <p data-en="Curiosity about artificial intelligence and how the technology can be used in practice">
                                 Nysgjerrighet på kunstig intelligens og hvordan
                                 teknologien kan brukes i praksis
                             </p>
@@ -390,7 +385,7 @@
 
                         <div class="check-item">
                             <span>→</span>
-                            <p>
+                            <p data-en="The ability and interest to program, explore and understand how systems fit together">
                                 Evne og interesse for å programmere, utforske
                                 og forstå hvordan systemer henger sammen
                             </p>
@@ -398,14 +393,14 @@
 
                         <div class="check-item">
                             <span>→</span>
-                            <p>
+                            <p data-en="Collaboration, knowledge sharing and teamwork">
                                 Samarbeid, kunnskapsdeling og arbeid i team
                             </p>
                         </div>
 
                         <div class="check-item">
                             <span>→</span>
-                            <p>
+                            <p data-en="Structured, independent and solution-oriented work">
                                 Strukturert, selvstendig og løsningsorientert arbeid
                             </p>
                         </div>
@@ -421,14 +416,13 @@
         <section class="why-section">
             <div class="content-container">
 
-                <p class="eyebrow">Hvorfor valgte vi Kartverket?</p>
+                <p class="eyebrow" data-en="Why did we choose The Norwegian Mapping Authority?">Hvorfor valgte vi Kartverket?</p>
 
-                <h2>
-                    Teknologi, data og<br>
-                    samfunnsnytte.
+                <h2 data-en="Technology, data and public value.">
+                    Teknologi, data og samfunnsnytte.
                 </h2>
 
-                <p>
+                <p data-en="Kartverket develops and manages data and services used every single day by the public sector, businesses and residents across Norway. The data matters for emergency preparedness, climate, property, transport and land management, among other things.">
                     Kartverket utvikler og forvalter data og tjenester som
                     brukes hver eneste dag av offentlig sektor, næringsliv og
                     innbyggere over hele Norge. Dataene er viktige innen blant
@@ -436,15 +430,10 @@
                     arealforvaltning.
                 </p>
 
-                <p>
+                <p data-en="Through the internship project we get to work at the intersection of technology, data, finance and public value.">
                     Gjennom praksisprosjektet får vi arbeide i skjæringspunktet
                     mellom teknologi, data, økonomi og samfunnsnytte.
                 </p>
-
-                <a href="index.html" class="back-link">
-                    <span>Tilbake til forsiden</span>
-                    <span class="arrow">→</span>
-                </a>
 
             </div>
         </section>
@@ -458,16 +447,191 @@
 
             <div>
                 <p class="footer-brand">Kartverket</p>
-                <p>Praksisprosjekt IS-302 · 2026</p>
+                <p data-en="Internship project IS-302 · 2026">Praksisprosjekt IS-302 · 2026</p>
             </div>
 
             <div class="footer-right">
-                <a href="index.html">Hjem</a>
-                <a href="oppgavebeskrivelse.html">Oppgavebeskrivelse</a>
+                <a href="index.html" data-en="Home">Hjem</a>
+                <a href="om-oss.html" data-en="About us">Om oss</a>
+                <a href="omkartverket.html" data-en="About The Norwegian Mapping Authority">Om Kartverket</a>
+                <a href="prosjektdagbok.html" data-en="Project diary">Prosjektdagbok</a>
+                <a href="status1.html">Status 1</a>
+                <a href="status2.html">Status 2</a>
+                <a href="refleksjoner.html" data-en="Reflections">Refleksjon</a>
             </div>
 
         </div>
     </footer>
+
+
+
+
+    <!-- MENYPANEL -->
+    <div class="menu-overlay" hidden></div>
+
+    <div class="menu-panel" id="hovedmeny" role="dialog" aria-modal="true" aria-label="Hovedmeny" hidden>
+
+        <button class="menu-close" type="button" aria-label="Lukk meny">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
+                stroke-linecap="round" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18"></path>
+            </svg>
+        </button>
+
+        <nav class="menu-primary" aria-label="Hovedsider">
+
+            <a href="index.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+
+                <span data-en="Home">Hjem</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="oppgavebeskrivelse.html" aria-current="page">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path>
+                    <path d="M14 3v5h5"></path>
+                    <path d="M9 13h6M9 17h6"></path>
+                </svg>
+
+                <span data-en="The Assignment">Oppgaven</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="om-oss.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M16 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9.5" cy="7.2" r="3.2"></circle>
+                    <path d="M21 20v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M15.6 4.4a3.2 3.2 0 0 1 0 5.6"></path>
+                </svg>
+
+                <span data-en="About Us">Om oss</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="omkartverket.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4z"></path>
+                    <path d="M9 4v13M15 6.5v13"></path>
+                </svg>
+
+                <span data-en="About The Norwegian Mapping Authority">Om Kartverket</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="prosjektdagbok.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+                    <path d="M8 7h8M8 11h8M8 15h5"></path>
+                </svg>
+
+                <span data-en="Project Diary">Prosjektdagbok</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <div class="status-menu">
+
+                <button class="status-menu-button" type="button" aria-expanded="false">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 20V10M12 20V4M6 20v-6"></path>
+                    </svg>
+
+                    <span data-en="Status">Status</span>
+
+                    <svg class="chevron status-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="m9 5 7 7-7 7"></path>
+                    </svg>
+                </button>
+
+                <div class="status-submenu" hidden>
+
+                    <a href="status1.html">
+                        <span>Status 1</span>
+
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="m9 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
+
+                    <a href="status2.html">
+                        <span>Status 2</span>
+
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="m9 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <a href="refleksjoner.html">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.5 1.5 3.5.8.8 1.3 1.5 1.5 2.5"></path>
+                    <path d="M9 18h6M10 22h4"></path>
+                </svg>
+
+                <span data-en="Reflections">Refleksjon</span>
+
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+        </nav>
+
+        <nav class="menu-secondary" aria-label="Eksterne lenker">
+
+            <a href="https://www.kartverket.no/" class="is-highlighted" target="_blank"
+                rel="noopener noreferrer">
+                kartverket.no
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                </svg>
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <script src="js/site.js"></script>
 
 </body>
 </html>
