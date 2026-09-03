@@ -694,6 +694,7 @@
     }
 
     .button {
+        width: 100%;
         min-width: 0;
         gap: 20px;
         font-size: 16px;
@@ -746,5 +747,9 @@
 
     .shortcut {
         align-items: flex-start;
+    }
+
+    .shortcut h3, .shortcut p {
+        overflow-wrap: anywhere;
     }
 }
