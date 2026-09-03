@@ -206,6 +206,24 @@
     margin-bottom: 0;
 }
 
+.team-photo-feature {
+    margin: 40px 0 8px;
+}
+
+.team-photo-feature img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+
+.team-photo-feature figcaption {
+    margin-top: 10px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+}
+
 
 /* ==================================================
    TEAM-GRID & PROFILKORT
