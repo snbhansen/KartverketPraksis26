@@ -515,26 +515,52 @@ footer {
     }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 768px) {
+    .header-container {
+        width: calc(100% - 32px);
+        gap: 12px;
+    }
 
+    .kartverket-logo {
+        width: 130px;
+    }
+
+    .uia-logo {
+        width: 110px;
+    }
+
+    .brand-divider,
+    .brand-project {
+        display: none;
+    }
+
+    .menu-button {
+        margin-left: 8px;
+    }
+
+    .menu-panel {
+        width: 100%;
+        padding: 18px 20px 32px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 620px) {
     .content-container {
         width: calc(100% - 32px);
     }
 
     .site-header {
         min-height: 78px;
-    }
-
-    .header-container {
-        width: calc(100% - 32px);
-    }
-
-    .kartverket-logo {
-        width: 140px;
-    }
-
-    .menu-button {
-        margin-left: 12px;
     }
 
     .menu-text {
@@ -545,13 +571,7 @@ footer {
         width: 32px;
     }
 
-    .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     .footer-right {
-        flex-direction: column;
         gap: 8px;
     }
 }
