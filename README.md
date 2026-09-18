@@ -26,7 +26,7 @@ Dokumenterer arbeidet gjennom praksisperioden uke for uke. Dagbokinnleggene inne
 
 ### [Status 1](View/status1.html)
 
-Den første statusrapporten beskriver Kartverket og bransjen, prosjektets arbeidsoppgaver, brukerbehovene som undersøkes og målet om å utvikle en trygg og nyttig AI-prototype.
+Den første statusrapporten beskriver Kartverket og bransjen, prosjektets arbeidsoppgaver, brukerbehovene som undersøkes, målet om å utvikle en trygg og nyttig AI-prototype, samt en videopresentasjon fra studentgruppen.
 
 ### [Status 2](View/status2.html)
 
