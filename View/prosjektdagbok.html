@@ -503,6 +503,419 @@
 
 </section>
 
+                    <!-- ==========================================
+                         UKE 37 - 7.-13. SEPTEMBER 2026
+                    =========================================== -->
+                    <section class="diary-week" aria-labelledby="uke-37">
+
+                        <h3 class="diary-week-heading" id="uke-37">
+                            <span class="diary-week-label" data-en="Week 37">Uke 37</span>
+                            <span class="diary-week-dates" data-en="7–13 September 2026">7.–13. september 2026</span>
+                        </h3>
+
+                        <div class="diary-list">
+
+                            <!-- DAGBOKSINNLEGG 04 -->
+                            <article class="diary-entry">
+
+                                <h4 class="diary-heading">
+                                    <button class="diary-toggle" type="button" aria-expanded="false"
+                                        aria-controls="dagbok-04">
+
+                                        <span class="diary-summary">
+                                            <span class="diary-number">04</span>
+
+                                            <span class="diary-title"
+                                                data-en="From technical foundation to Proof of Concept">
+                                                Fra teknisk fundament til Proof of Concept
+                                            </span>
+
+                                            <span class="diary-date">
+                                                <strong data-en="7–13 September 2026">7.–13. september 2026</strong>
+                                            </span>
+                                        </span>
+
+                                        <svg class="diary-chevron" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                                            stroke-linejoin="round" aria-hidden="true">
+                                            <path d="m5 9 7 7 7-7"></path>
+                                        </svg>
+
+                                    </button>
+                                </h4>
+
+                                <div class="diary-body" id="dagbok-04" hidden>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="Main focus">Hovedfokus</span>
+                                        <p
+                                            data-en="Week 37 marked the transition from establishing Ratio's technical foundation to concrete work on a functioning Proof of Concept. With Django, Django REST Framework, the new Ratio repository, ADRs and shared rulesets in place, the sprint goal was to develop the most important parts needed to demonstrate the concept. Preparing the documents and content provided by Tobias was still outstanding at the start of the week.">
+                                            Uke 37 markerte overgangen fra etableringen av Ratios tekniske fundament
+                                            til konkret arbeid med en fungerende Proof of Concept. Med Django,
+                                            Django REST Framework, det nye Ratio-repoet, ADR-er og felles rulesets
+                                            på plass var sprintmålet å utvikle de viktigste delene som måtte til for
+                                            å demonstrere konseptet. Klargjøring av dokumentene og innholdet fra
+                                            Tobias gjensto fortsatt ved inngangen til uken.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="Work carried out">Arbeid utført</span>
+                                        <p
+                                            data-en="The group worked on a frontend with a chat interface, integrated the robot mascot and continued the LLM integration. At the same time, we developed the plan for RAG and assessed how the different data sources should be processed. This resulted in an important architectural choice: structured Excel and tabular data should be handled through Pandas and parsing, PDFs and other documents through RAG, and financial data from Unit4 through API integration. The LLM should not be the data source itself, but should formulate answers based on information retrieved from verifiable sources.">
+                                            Gruppen arbeidet med en frontend med chatinterface, integrerte robotmaskoten
+                                            og videreførte LLM-integrasjonen. Samtidig konkretiserte vi planen for RAG
+                                            og vurderte hvordan de ulike datakildene skulle behandles. Dette førte til
+                                            et viktig arkitekturvalg: strukturerte Excel- og tabelldata skulle håndteres
+                                            med Pandas og parsing, PDF-er og andre dokumenter med RAG, og økonomidata
+                                            fra Unit4 gjennom API-integrasjon. LLM-en skulle ikke være selve datakilden,
+                                            men formulere svar på grunnlag av informasjon hentet fra verifiserbare kilder.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="People and collaboration">Personer og samarbeid</span>
+                                        <p
+                                            data-en="The group distributed the work across the frontend, LLM integration, document processing, architecture and further integrations. A shared technical foundation and clear areas of responsibility allowed several parts of the solution to be developed in parallel, while ongoing coordination ensured that the components were designed to work together.">
+                                            Gruppen fordelte arbeidet mellom frontend, LLM-integrasjon,
+                                            dokumenthåndtering, arkitektur og videre integrasjoner. Et felles teknisk
+                                            fundament og tydelige ansvarsområder gjorde det mulig å utvikle flere deler
+                                            av løsningen parallelt, samtidig som løpende koordinering skulle sikre at
+                                            komponentene ble utformet for å fungere sammen.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="New topics">Nye temaer</span>
+                                        <p
+                                            data-en="We explored a hybrid approach to information processing in which RAG, Pandas and API integration fulfil different roles. Grounding also became a central topic: the response from the language model must be linked to retrieved content, and the components must pass reliable context to one another throughout the information flow.">
+                                            Vi undersøkte en hybrid tilnærming til informasjonsbehandling, der RAG,
+                                            Pandas og API-integrasjon fyller ulike roller. Grounding ble også et sentralt
+                                            tema: Språkmodellens svar må forankres i innhentet innhold, og komponentene
+                                            må sende pålitelig kontekst videre til hverandre gjennom informasjonsflyten.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="Assessments and reflection">Vurderinger og refleksjon</span>
+                                        <p
+                                            data-en="An important lesson was that Ratio should not attempt to process all information in the same way. RAG, Pandas and API lookups solve different problems and place different demands on structure, retrieval and verification. It therefore became increasingly clear that a hybrid information architecture would provide a more precise and maintainable solution than a single common processing method.">
+                                            En viktig læring var at Ratio ikke bør forsøke å behandle all informasjon
+                                            på samme måte. RAG, Pandas og API-oppslag løser ulike problemer og stiller
+                                            forskjellige krav til struktur, innhenting og verifisering. Det ble derfor
+                                            stadig tydeligere at en hybrid informasjonsarkitektur ville gi en mer presis
+                                            og vedlikeholdbar løsning enn én felles behandlingsmetode.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="Next time">Neste gang</span>
+                                        <p
+                                            data-en="The next step was to connect the components, incorporate relevant documents and continue developing the POC. Further work towards an MVP would later also require authentication, access control, security, role-based permissions and integration with systems at The Norwegian Mapping Authority.">
+                                            Neste steg var å koble komponentene sammen, ta inn relevante dokumenter
+                                            og videreføre POC-en. I det senere arbeidet mot en MVP ville også
+                                            autentisering, tilgangsstyring, sikkerhet, rollebaserte tilganger og
+                                            integrasjon mot Kartverkets systemer bli viktig.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-note">
+                                        <span data-en="Particular points">Spesielle momenter</span>
+                                        <p
+                                            data-en="The week clarified how the technical foundation could be developed into a concrete Proof of Concept. The distinction between the language model as a formulation layer and the underlying systems as verifiable sources became a key principle for further development.">
+                                            Uken tydeliggjorde hvordan det tekniske fundamentet kunne videreutvikles
+                                            til en konkret Proof of Concept. Skillet mellom språkmodellen som
+                                            formuleringslag og de underliggende systemene som verifiserbare kilder
+                                            ble et sentralt prinsipp for den videre utviklingen.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+
+                    <!-- ==========================================
+                         UKE 38 - 14.-20. SEPTEMBER 2026
+                    =========================================== -->
+                    <section class="diary-week" aria-labelledby="uke-38">
+
+                        <h3 class="diary-week-heading" id="uke-38">
+                            <span class="diary-week-label" data-en="Week 38">Uke 38</span>
+                            <span class="diary-week-dates" data-en="14–20 September 2026">14.–20. september 2026</span>
+                        </h3>
+
+                        <div class="diary-list">
+
+                            <!-- DAGBOKSINNLEGG 05 -->
+                            <article class="diary-entry">
+
+                                <h4 class="diary-heading">
+                                    <button class="diary-toggle" type="button" aria-expanded="false"
+                                        aria-controls="dagbok-05">
+
+                                        <span class="diary-summary">
+                                            <span class="diary-number">05</span>
+
+                                            <span class="diary-title" data-en="Connecting the core components">
+                                                Komponentene kobles sammen
+                                            </span>
+
+                                            <span class="diary-date">
+                                                <strong data-en="14–20 September 2026">14.–20. september 2026</strong>
+                                            </span>
+                                        </span>
+
+                                        <svg class="diary-chevron" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                                            stroke-linejoin="round" aria-hidden="true">
+                                            <path d="m5 9 7 7 7-7"></path>
+                                        </svg>
+
+                                    </button>
+                                </h4>
+
+                                <div class="diary-body" id="dagbok-05" hidden>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="Main focus">Hovedfokus</span>
+                                        <p
+                                            data-en="The main focus in week 38 was to move from several separate components towards a more coherent Proof of Concept. The frontend with its chat interface and robot mascot had been implemented, and access to an API key for Unit4 made it possible to begin work on the Unit4 and DFØ integration.">
+                                            Hovedfokuset i uke 38 var å gå fra flere separate komponenter til en mer
+                                            sammenhengende Proof of Concept. Frontend med chatinterface og robotmaskot
+                                            var implementert, og tilgang til en API-nøkkel for Unit4 gjorde det mulig
+                                            å starte arbeidet med Unit4-/DFØ-integrasjonen.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="Work carried out">Arbeid utført</span>
+                                        <p
+                                            data-en="The group continued connecting the frontend, backend, data sources and language model. The intended information flow was clarified: a question from the frontend should be processed by the backend, relevant information should then be retrieved from Unit4 or RAG, and only afterwards should the LLM formulate a response for the chat interface. The central objective was that the content of the answer should originate from real and verifiable data sources.">
+                                            Gruppen arbeidet videre med å koble frontend, backend, datakilder og
+                                            språkmodell sammen. Den ønskede informasjonsflyten ble tydeligere: Et
+                                            spørsmål fra frontend skulle behandles i backend, før relevant informasjon
+                                            ble hentet fra Unit4 eller RAG. Først deretter skulle LLM-en formulere en
+                                            respons til chatinterfacet. Det sentrale målet var at innholdet i svaret
+                                            skulle komme fra reelle og verifiserbare datakilder.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="People and collaboration">Personer og samarbeid</span>
+                                        <p
+                                            data-en="The work required close coordination between the parts of the group working on the user interface, backend, RAG and integrations. By comparing assumptions and interfaces across these areas, the team developed a clearer shared understanding of how data should move through the complete solution.">
+                                            Arbeidet krevde tett koordinering mellom delene av gruppen som arbeidet
+                                            med brukergrensesnitt, backend, RAG og integrasjoner. Ved å avstemme
+                                            forutsetninger og grensesnitt på tvers av områdene fikk teamet en tydeligere
+                                            felles forståelse av hvordan data skulle bevege seg gjennom hele løsningen.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="New topics">Nye temaer</span>
+                                        <p
+                                            data-en="Attention shifted from whether the project had selected the right components to whether those components could function together as one system. For RAG, we also explored provenance and source references, and how grounding could reduce the risk of hallucinations by giving the language model relevant information from authoritative sources.">
+                                            Oppmerksomheten flyttet seg fra om prosjektet hadde valgt de riktige
+                                            komponentene, til om komponentene faktisk kunne fungere sammen som ett
+                                            system. For RAG undersøkte vi også proveniens og kildehenvisninger, og
+                                            hvordan grounding kunne redusere risikoen for hallusinasjoner ved å gi
+                                            språkmodellen relevant informasjon fra autoritative kilder.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="Assessments and reflection">Vurderinger og refleksjon</span>
+                                        <p
+                                            data-en="As the components were connected, it became increasingly important to view the LLM as a formulation layer over verified information rather than as an independent source of financial facts. This distinction affects both the architecture and how the quality of an answer should be assessed, because a fluent response is only useful when its factual basis can be traced and checked.">
+                                            Etter hvert som komponentene ble koblet sammen, ble det stadig viktigere
+                                            å se LLM-en som et formuleringslag over verifisert informasjon, ikke som
+                                            en selvstendig kilde til økonomiske fakta. Dette skillet påvirker både
+                                            arkitekturen og hvordan kvaliteten på et svar bør vurderes, fordi et
+                                            velformulert svar bare er nyttig når faktagrunnlaget kan spores og kontrolleres.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="Next time">Neste gang</span>
+                                        <p
+                                            data-en="The next step was to continue stabilising the flow between the frontend, backend, Unit4, RAG and LLM. We would also continue developing source references and grounding so that the POC could provide more verifiable and reliable responses.">
+                                            Neste steg var å fortsette stabiliseringen av flyten mellom frontend,
+                                            backend, Unit4, RAG og LLM. Vi skulle også videreutvikle kildehenvisninger
+                                            og grounding, slik at POC-en kunne gi mer etterprøvbare og pålitelige svar.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-note">
+                                        <span data-en="Particular points">Spesielle momenter</span>
+                                        <p
+                                            data-en="The group participated in Techpoint Future on 15 September and Techpoint on 16–17 September. These were relevant professional activities related to technology, artificial intelligence and digitalisation alongside the practical development work.">
+                                            Gruppen deltok på Techpoint Future 15. september og Techpoint 16.–17.
+                                            september. Dette var relevante faglige aktiviteter knyttet til teknologi,
+                                            kunstig intelligens og digitalisering ved siden av det praktiske
+                                            utviklingsarbeidet.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+
+                    <!-- ==========================================
+                         UKE 39 - 21.-27. SEPTEMBER 2026
+                    =========================================== -->
+                    <section class="diary-week" aria-labelledby="uke-39">
+
+                        <h3 class="diary-week-heading" id="uke-39">
+                            <span class="diary-week-label" data-en="Week 39">Uke 39</span>
+                            <span class="diary-week-dates" data-en="21–27 September 2026">21.–27. september 2026</span>
+                        </h3>
+
+                        <div class="diary-list">
+
+                            <!-- DAGBOKSINNLEGG 06 -->
+                            <article class="diary-entry">
+
+                                <h4 class="diary-heading">
+                                    <button class="diary-toggle" type="button" aria-expanded="false"
+                                        aria-controls="dagbok-06">
+
+                                        <span class="diary-summary">
+                                            <span class="diary-number">06</span>
+
+                                            <span class="diary-title"
+                                                data-en="POC, user needs and verified data sources">
+                                                POC, brukerbehov og verifiserte datakilder
+                                            </span>
+
+                                            <span class="diary-date">
+                                                <strong data-en="21–27 September 2026">21.–27. september 2026</strong>
+                                            </span>
+                                        </span>
+
+                                        <svg class="diary-chevron" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                                            stroke-linejoin="round" aria-hidden="true">
+                                            <path d="m5 9 7 7 7-7"></path>
+                                        </svg>
+
+                                    </button>
+                                </h4>
+
+                                <div class="diary-body" id="dagbok-06" hidden>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="Main focus">Hovedfokus</span>
+                                        <p
+                                            data-en="Week 39 combined technical development with user research and further clarification of the project's value. The group presented how Ratio is intended to create value, the current status of the solution, our way of working and expectations for the end of the sprint and the demo. The feedback highlighted that the technical POC and the understanding of user needs had to be developed together.">
+                                            Uke 39 kombinerte teknisk utvikling med brukerarbeid og videre
+                                            konkretisering av prosjektets verdi. Gruppen presenterte hvordan Ratio
+                                            skal skape verdi, status på løsningen, arbeidsmåten i prosjektet og
+                                            forventningene mot sprintslutt og demo. Tilbakemeldingene tydeliggjorde at
+                                            den tekniske POC-en og forståelsen av brukerbehov måtte utvikles sammen.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="Work carried out">Arbeid utført</span>
+                                        <p
+                                            data-en="Work on the Unit4 and DFØ integration continued after a technical blocker concerning the script and setup from Tobias was clarified. The integration progressed far enough for the chart of accounts to be retrieved and used locally in connection with the demo work, although the complete integration was not finished. In parallel, a separate solution for targeted live lookups was tested in isolation from the team's other code. The goal was to retrieve only the specific account or information requested by the user instead of larger quantities of data. Some points still required clarification, including the correct company code and test path setup.">
+                                            Arbeidet med Unit4-/DFØ-integrasjonen fortsatte etter at en teknisk blocker
+                                            knyttet til script og oppsett fra Tobias ble avklart. Integrasjonen kom
+                                            langt nok til at kontoplanen kunne hentes og brukes lokalt i forbindelse
+                                            med demoarbeidet, men den samlede integrasjonen var ikke ferdig. Parallelt
+                                            ble en separat løsning for målrettede live-oppslag testet isolert fra
+                                            teamets øvrige kode. Målet var å hente bare den konkrete kontoen eller
+                                            informasjonen brukeren etterspurte, fremfor større datamengder. Enkelte
+                                            forhold måtte fortsatt avklares, blant annet riktig firmakode og korrekt
+                                            test-path/oppsett.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="People and collaboration">Personer og samarbeid</span>
+                                        <p
+                                            data-en="The group collaborated with supervisors and stakeholders to connect technical progress with real needs. An initiative was taken to meet with Maria and Arvin to discuss possible benefits and time savings, while Tobias contributed to clarifying the integration setup. Ratio was also presented to Lars Fredrik, whose positive response showed interest in seeing a more complete and functioning solution. Anne Kristin was identified as a relevant person for further user insight.">
+                                            Gruppen samarbeidet med veiledere og interessenter for å knytte den
+                                            tekniske utviklingen til reelle behov. Det ble tatt initiativ til et møte
+                                            med Maria og Arvin for å diskutere mulig gevinst og tidsbesparelse, mens
+                                            Tobias bidro i avklaringen av integrasjonsoppsettet. Ratio ble også
+                                            presentert for Lars Fredrik, som ga en positiv tilbakemelding og viste
+                                            interesse for å se en mer komplett og fungerende løsning videre. Anne
+                                            Kristin ble trukket frem som en relevant person for videre brukerinnsikt.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="New topics">Nye temaer</span>
+                                        <p
+                                            data-en="Feedback from the stand-up emphasised direct links in source references and answers adapted to four primary user roles: regular employees, approvers, accountants and BDMs. The need for better user research, clearly delimited high-value use cases, live demos and interviews also became more important. Work on the user survey continued, and a first draft was prepared and delivered to Arvin for revision. The survey was to be adapted to the four user groups, with Microsoft Forms included in the continued work.">
+                                            Tilbakemeldingene fra standupen fremhevet direkte lenker i
+                                            kildehenvisninger og svar tilpasset fire primære brukerroller: vanlig
+                                            ansatt, attestant, økonom/regnskapsfører og BDM. Behovet for bedre
+                                            behovskartlegging, tydelig avgrensede bruksområder med høy verdi,
+                                            live-demoer og intervjuer ble også viktigere. Arbeidet med brukerundersøkelsen
+                                            fortsatte, og et første utkast ble utarbeidet og levert til Arvin for
+                                            videre revisjon. Undersøkelsen skulle tilpasses de fire brukergruppene,
+                                            med Microsoft Forms som del av det videre arbeidet.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="Assessments and reflection">Vurderinger og refleksjon</span>
+                                        <p
+                                            data-en="A first rough estimate of possible potential assumed that a regular employee spends around 20 minutes per week on finance-related tasks across approximately 650 employees. This corresponds to about 13,000 minutes per week, 52,000 minutes per month, 866 hours per month and 9,100 hours per year. These figures are not a documented or realised benefit, but an initial basis for discussing where Ratio may create value. At the same time, the technical work confirmed the importance of routing each question to the correct source: RAG for documents, Pandas for structured data and the Unit4 and DFØ API for financial lookups. This is necessary for precise, verifiable and relevant answers.">
+                                            Et første grovt anslag på mulig potensial tok utgangspunkt i at en vanlig
+                                            ansatt bruker rundt 20 minutter per uke på økonomirelaterte oppgaver, og
+                                            at dette gjelder omtrent 650 ansatte. Det tilsvarer om lag 13 000 minutter
+                                            per uke, 52 000 minutter per måned, 866 timer per måned og 9 100 timer per
+                                            år. Tallene er ikke en dokumentert eller realisert gevinst, men et første
+                                            grunnlag for å diskutere hvor Ratio kan skape verdi. Samtidig bekreftet det
+                                            tekniske arbeidet betydningen av å route hvert spørsmål til riktig kilde:
+                                            RAG for dokumenter, Pandas for strukturerte data og Unit4-/DFØ-API-et for
+                                            økonomioppslag. Dette er nødvendig for å gi presise, etterprøvbare og
+                                            relevante svar.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-section">
+                                        <span class="diary-label" data-en="Next time">Neste gang</span>
+                                        <p
+                                            data-en="The continued work would focus on stabilising the live Unit4 flow, advancing RAG and Pandas, completing the user surveys and further developing routing. The group would also work on connecting Unit4, RAG and Pandas so that the correct data source is used for each question, while further clarifying the direction of the POC and MVP.">
+                                            Det videre arbeidet skulle rettes mot å stabilisere live-flyten mot Unit4,
+                                            videreføre RAG og Pandas, ferdigstille brukerundersøkelsene og videreutvikle
+                                            routing. Gruppen skulle også arbeide med å koble Unit4, RAG og Pandas
+                                            sammen, slik at riktig datakilde brukes til hvert spørsmål, samtidig som
+                                            retningen for POC og MVP ble ytterligere konkretisert.
+                                        </p>
+                                    </div>
+
+                                    <div class="diary-note">
+                                        <span data-en="Particular points">Spesielle momenter</span>
+                                        <p
+                                            data-en="The week showed that technical progress alone is not sufficient to demonstrate value. Reliable source selection, role-adapted responses and systematic feedback from users must support one another if Ratio is to develop from a POC into a useful solution.">
+                                            Uken viste at teknisk fremdrift alene ikke er tilstrekkelig for å
+                                            dokumentere verdi. Pålitelig kildevalg, rollebaserte svar og systematiske
+                                            tilbakemeldinger fra brukere må støtte hverandre dersom Ratio skal utvikles
+                                            fra en POC til en nyttig løsning.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+
                     <!-- KOPIER DENNE BLOKKEN FOR NY UKE -->
 
                     <!--
