@@ -30,8 +30,8 @@
                 <button class="lang-button" type="button" aria-expanded="false" aria-controls="sprakmeny">
                     <span>Language</span>
 
-                    <svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <svg class="lang-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d="m5 9 7 7 7-7"></path>
                     </svg>
                 </button>
@@ -88,20 +88,73 @@
 
                 <section class="status-section">
                     <h2 data-en="Status so far">Status så langt</h2>
-                    <p data-en="The project is still under development, and we are continuing to explore needs, gather insight and build the solution together with Kartverket.">
-                        Prosjektet er fortsatt under utvikling, og vi arbeider videre med å utforske
-                        behov, samle innsikt og utvikle løsningen i samarbeid med Kartverket.
+                    <p
+                        data-en="Since status report 1, the group has continued to develop Ratio and has managed to get several of the key components of the solution to work together.">
+                        Siden Status 1 har gruppen arbeidet videre med utviklingen av Ratio og fått flere av de sentrale
+                        delene i
+                        løsningen til å fungere sammen.
+                    </p>
+
+                    <p> Det er etablert en felles systemarkitektur basert på Django og Django REST Framework (DRF), som
+                        gjør det mulig å
+                        koble frontend, backend og ulike datakilder sammen på en strukturert måte. Gruppen har
+                        videreutviklet
+                        chatløsningen og arbeidet med integrasjon mot Unit4, slik at systemet kan hente inn
+                        økonomirelaterte data
+                        direkte fra virksomhetens systemer.
+                        I tillegg er det utviklet en RAG-løsning som gjør det mulig å søke i dokumenter og annet
+                        kunnskapsgrunnlag.
+                    </p>
+
+                    <p> Dette gir Ratio tilgang til både strukturerte data fra Unit4 og ustrukturert informasjon fra
+                        dokumenter.
+                        Prosjektet har dermed beveget seg fra en tidlig prototype til en første Proof of Concept (POC),
+                        hvor flere av
+                        komponentene fungerer i en sammenhengende arbeidsflyt.
+                    </p>
+
+                    <p
+                        data-en="The group has also conducted user testing of Ratio to evaluate how the solution handles unknown documents and various types of issues. The testing has provided valuable insights that are used further in the development of the system.">
+                        Gruppen har også gjennomført brukertesting av Ratio for å evaluere hvordan løsningen håndterer ukjente dokumenter og
+                        ulike typer problemstillinger. Testingen har gitt verdifull innsikt som brukes videre i utviklingen av systemet.
+                    </p>
+                    </section>
+
+                <section class="status-section">
+                    <h2 data-en="Challenges and Experiences">Utfordringer og erfaringer</h2>
+                    <p
+                        data-en="Through the development work, the group has experienced that integration between different data sources and systems is more demanding than initially assumed. In particular, the work with the Unit4 integration has required testing, technical clarifications, and adjustments.">
+                        Gjennom utviklingsarbeidet har gruppen erfart at integrasjon mellom ulike datakilder og systemer
+                        er mer krevende
+                        enn først antatt. Særlig arbeidet med Unit4-integrasjonen har krevd testing, tekniske
+                        avklaringer og
+                        tilpasninger.
+                        En annen viktig erfaring er at løsningen må kunne tolke spørsmål som brukerne faktisk stiller,
+                        ikke bare
+                        forhåndsdefinerte formuleringer. </p>
+
+                    <p> Derfor har gruppen arbeidet med å forbedre hvordan Ratio forstår naturlig språk og finner riktig
+                        informasjon på
+                        tvers av datakilder.
+                        Parallelt med den tekniske utviklingen har gruppen samlet brukerinnsikt gjennom møter,
+                        diskusjoner og
+                        spørreundersøkelser. Dette har gitt et bedre grunnlag for å prioritere hvilke problemstillinger
+                        Ratio skal løse.
                     </p>
                 </section>
 
-                <section class="status-section">
-                    <h2 data-en="Further work">Videre arbeid</h2>
-                    <p data-en="In the next phase we will develop the prototype further, test its functionality and collect feedback from users. More information will be added as the project develops.">
-                        I neste fase skal vi videreutvikle prototypen, teste funksjonalitet og hente inn
-                        tilbakemeldinger fra brukere. Mer informasjon vil bli lagt til etter hvert som
-                        prosjektet utvikler seg.
-                    </p>
-                </section>
+            <section class="status-section">
+                <h2 data-en="Video">Video</h2>
+            <p
+            data-en="This video shows a demonstration of the new chat solution and its functionality.">
+            Denne videoen viser en demonstrasjon av den nye chatløsningen og dens funksjonalitet.
+            </p>
+
+            <!-- legg til video her-->
+            <div class="video-container">
+            </div>
+
+            </section>
 
             </div>
         </section>
@@ -139,8 +192,8 @@
     <div class="menu-panel" id="hovedmeny" role="dialog" aria-modal="true" aria-label="Hovedmeny" hidden>
 
         <button class="menu-close" type="button" aria-label="Lukk meny">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"
-                stroke-linecap="round" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"
+                aria-hidden="true">
                 <path d="M6 6l12 12M18 6L6 18"></path>
             </svg>
         </button>
@@ -268,7 +321,9 @@
             <a href="refleksjoner.html">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.5 1.5 3.5.8.8 1.3 1.5 1.5 2.5"></path>
+                    <path
+                        d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.5 1.5 3.5.8.8 1.3 1.5 1.5 2.5">
+                    </path>
                     <path d="M9 18h6M10 22h4"></path>
                 </svg>
 
@@ -284,8 +339,7 @@
 
         <nav class="menu-secondary" aria-label="Eksterne lenker">
 
-            <a href="https://www.kartverket.no/" class="is-highlighted" target="_blank"
-                rel="noopener noreferrer">
+            <a href="https://www.kartverket.no/" class="is-highlighted" target="_blank" rel="noopener noreferrer">
                 kartverket.no
                 <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
