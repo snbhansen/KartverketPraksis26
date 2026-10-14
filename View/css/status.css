@@ -192,6 +192,15 @@
     background-color: #000000;
 }
 
+/* Video i originalformat (2038x1080) - unngår beskjæring av bildekantene */
+.video-container--wide {
+    aspect-ratio: 2038 / 1080;
+}
+
+.video-container--wide video {
+    object-fit: contain;
+}
+
 
 /* ==================================================
    RESPONSIVT DESIGN
