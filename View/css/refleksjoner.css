@@ -534,6 +534,10 @@
     line-height: 1.75;
 }
 
+.diary-section p + p {
+    margin-top: 20px;
+}
+
 .diary-note {
     margin-top: 25px;
 
